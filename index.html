@@ -116,6 +116,21 @@
   .med{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:24px}
   .med h3{color:var(--kiiro);font-size:19px;margin-bottom:8px}
   .med ul{padding-left:1.2em}
+  .med-list{max-width:760px;margin:0 auto}
+  .med-list li{margin-bottom:10px}
+  .med-list b{color:var(--kiiro)}
+
+  /* 研究コーナー（方眼ノート風カード） */
+  .research{background:#fff}
+  .lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:820px){.lab-grid{grid-template-columns:1fr}}
+  .lab{background-color:#fbfdfe;background-image:linear-gradient(rgba(11,79,108,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(11,79,108,.07) 1px,transparent 1px);background-size:18px 18px;border:1px solid #cfe0e7;border-radius:6px;padding:28px 24px 22px;box-shadow:0 6px 20px rgba(11,79,108,.06)}
+  .lab .no{display:inline-block;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.15em;color:var(--umi);background:#fff;border:1px solid var(--umi);border-radius:3px;padding:0 8px;margin-bottom:10px}
+  .lab h3{color:var(--umi-deep);font-size:20px;margin-bottom:10px}
+  .lab ul{padding-left:1.2em}
+  .lab li{margin-bottom:6px}
+  .lab .src{margin-top:12px;padding-top:10px;border-top:1px dashed #b9cdd6;font-size:12.5px;color:var(--hai)}
+  .lab .src a{color:var(--umi)}
   .alert{margin-top:22px;background:var(--sango);color:#fff;border-radius:12px;padding:18px 22px;font-weight:500}
 
   /* 講座 */
@@ -149,6 +164,7 @@
       <li><a href="#history">歴史</a></li>
       <li><a href="#howto">やり方</a></li>
       <li><a href="#medical">医療情報</a></li>
+      <li><a href="#research">研究</a></li>
       <li><a href="#course">講座</a></li>
       <li><a href="#profile">プロフィール</a></li>
     </ul>
@@ -330,44 +346,29 @@
       <h2>薬剤師からの医療情報</h2>
       <p>始める前に、必ず確認してください</p>
     </div>
-    <div class="med-grid">
-      <div class="med">
-        <h3>医師への相談が必要な方</h3>
-        <ul>
-          <li>妊娠中・授乳中の方</li>
-          <li>持病のある方（糖尿病、心臓・腎臓・肝臓の病気など）</li>
-          <li>治療中・通院中の方</li>
-          <li>成長期のお子さん、ご高齢の方</li>
-          <li>体重が標準より少ない方</li>
-        </ul>
-      </div>
-      <div class="med">
-        <h3>お薬を飲んでいる方へ</h3>
-        <ul>
-          <li>食事量が変わると、お薬の効き方や副作用に影響することがあります</li>
-          <li>特に血糖値・血圧を下げるお薬などは注意が必要です</li>
-          <li>自己判断でお薬を中止・調整しないでください</li>
-          <li>始める前に、主治医または薬剤師に相談しましょう</li>
-        </ul>
-      </div>
-      <div class="med">
-        <h3>すぐに中止するサイン</h3>
-        <ul>
-          <li>強いめまい、ふらつき、冷や汗、手のふるえ</li>
-          <li>動悸、強い頭痛、吐き気</li>
-          <li>意識がぼんやりする</li>
-        </ul>
-        <p style="margin-top:8px">症状が続く場合は、医療機関を受診してください。</p>
-      </div>
-      <div class="med">
-        <h3>情報の見極め方</h3>
-        <ul>
-          <li>「必ず痩せる」「病気が治る」などの断定的な表現に注意</li>
-          <li>特定の商品を買わないとできない、という情報は慎重に</li>
-          <li>出典がはっきりした情報を選びましょう</li>
-        </ul>
-      </div>
-      <div class="med">
+    <div class="med med-list">
+      <ul>
+        <li><b>医師に相談してから：</b>妊娠中・授乳中、持病がある・通院中、成長期・ご高齢、やせ型の方</li>
+        <li><b>お薬を飲んでいる方：</b>食事量で効き方が変わることがあります（特に血糖値・血圧のお薬）。自己判断で中止・調整せず、主治医か薬剤師に相談を</li>
+        <li><b>すぐ中止するサイン：</b>強いめまい・ふらつき・冷や汗・手のふるえ・動悸・強い頭痛・吐き気・意識がぼんやりする。続くときは受診を</li>
+        <li><b>情報の見極め：</b>「必ず痩せる」「治る」などの断定や、特定の商品を勧める情報は慎重に。出典のある情報を選びましょう</li>
+      </ul>
+    </div>
+    <div class="alert">このサイトの情報は一般的な内容です。診断や治療に代わるものではありません。体調に不安がある方は、医師・薬剤師にご相談ください。</div>
+  </div>
+</section>
+
+<!-- 研究 -->
+<section id="research" class="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">RESEARCH</span>
+      <h2>研究のいま</h2>
+      <p>わかっていること、まだわかっていないこと</p>
+    </div>
+    <div class="lab-grid">
+      <div class="lab">
+        <span class="no">REPORT 01</span>
         <h3>最新の研究報告</h3>
         <ul>
           <li>「時間を決めて食べる」「食べない日をつくる」などの断続的ファスティングは、ふつうのカロリー制限と比べて、体重の減り方に大きな差はないと報告されています（99件の研究のまとめ・2025年）</li>
@@ -375,10 +376,11 @@
           <li>大切なのは「1日にとる量」で、方法は続けやすいものを選ぶのがよい、というのが専門家の見方です</li>
           <li>授乳中のファスティングは研究が少なく、安全性はまだはっきりしていません。水分不足や長時間の絶食は母乳への影響が心配されるため、医師・助産師に相談を</li>
         </ul>
-        <p style="margin-top:8px;font-size:13px">出典：<a href="https://bmjgroup.com/intermittent-fasting-comparable-to-traditional-diets-for-weight-loss/" target="_blank" rel="noopener" style="color:var(--kiiro)">BMJ 2025;389:e082007</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/41036194/" target="_blank" rel="noopener" style="color:var(--kiiro)">Front Nutr 2025</a>／<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/oby.24252" target="_blank" rel="noopener" style="color:var(--kiiro)">Obesity 2025</a></p>
+        <p class="src">出典：<a href="https://bmjgroup.com/intermittent-fasting-comparable-to-traditional-diets-for-weight-loss/" target="_blank" rel="noopener">BMJ 2025;389:e082007</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/41036194/" target="_blank" rel="noopener">Front Nutr 2025</a>／<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/oby.24252" target="_blank" rel="noopener">Obesity 2025</a></p>
       </div>
-      <div class="med">
-        <h3>細胞の「お掃除」オートファジーと研究のいま</h3>
+      <div class="lab">
+        <span class="no">REPORT 02</span>
+        <h3>細胞の「お掃除」オートファジー</h3>
         <ul>
           <li>オートファジーは、細胞の中の古くなった部品を分解して再利用するしくみ。2016年に大隅良典さんがノーベル賞を受賞した研究です</li>
           <li>空腹の時間がオートファジーを活発にすることは、主に動物や細胞の実験で確かめられてきました</li>
@@ -386,10 +388,9 @@
           <li>5日間の「断食をまねた食事」を数か月くり返した人で、血液から推定した「生物学的年齢」が約2.5歳低かったという報告もあります（2024年）。ただし推定値で、研究者が関わる会社の食品を使った研究です</li>
           <li>人で「細胞が若返る」「老化が止まる」とまでは、まだ確かめられていません</li>
         </ul>
-        <p style="margin-top:8px;font-size:13px">出典：<a href="https://doaj.org/article/07535cae9755447cbf16d32138fdada8" target="_blank" rel="noopener" style="color:var(--kiiro)">Nature Communications 2024</a>／<a href="https://www.researchgate.net/publication/391597820_Intermittent_time-restricted_eating_may_increase_autophagic_flux_in_humans_an_exploratory_analysis" target="_blank" rel="noopener" style="color:var(--kiiro)">J Physiol 2025</a></p>
+        <p class="src">出典：<a href="https://doaj.org/article/07535cae9755447cbf16d32138fdada8" target="_blank" rel="noopener">Nature Communications 2024</a>／<a href="https://www.researchgate.net/publication/391597820_Intermittent_time-restricted_eating_may_increase_autophagic_flux_in_humans_an_exploratory_analysis" target="_blank" rel="noopener">J Physiol 2025</a></p>
       </div>
     </div>
-    <div class="alert">このサイトの情報は一般的な内容です。診断や治療に代わるものではありません。体調に不安がある方は、医師・薬剤師にご相談ください。</div>
   </div>
 </section>
 
