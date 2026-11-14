@@ -588,8 +588,16 @@ setTimeout(() => document.getElementById("pFill").style.width = rate + "%", 200)
   const ys = DATA.map(r => r[1]).concat([START_WEIGHT, GOAL_WEIGHT]);
   const yMax = Math.ceil(Math.max(...ys) + 0.5);
   const yMin = Math.floor(Math.min(...ys) - 0.5);
-  const n = Math.max(DATA.length - 1, 1);
-  const x = i => L + (W - L - R) * i / n;
+  // 日付（"月/日"）を、スタート日からの日数に直す（年をまたいだら翌年として数える）
+  let year = 2000, prevMonth = 0;
+  const days = DATA.map(r => {
+    const [m, d] = r[0].split("/").map(Number);
+    if (m < prevMonth) year++;
+    prevMonth = m;
+    return Date.UTC(year, m - 1, d) / 86400000;
+  });
+  const span = Math.max(days[days.length - 1] - days[0], 1);
+  const x = i => L + (W - L - R) * (days[i] - days[0]) / span;
   const y = v => T + (H - T - B) * (yMax - v) / (yMax - yMin);
   let s = "";
 
@@ -608,11 +616,14 @@ setTimeout(() => document.getElementById("pFill").style.width = rate + "%", 200)
     const area = `${x(0)},${H-B} ${pts} ${x(DATA.length-1)},${H-B}`;
     s += `<polygon points="${area}" fill="#0b4f6c" opacity=".08"/>`;
     s += `<polyline points="${pts}" fill="none" stroke="#0b4f6c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>`;
-    const every = Math.ceil(DATA.length / 10);
+    // 日付ラベルが重ならないよう、間隔が狭いものは省く（最初と最後は必ず表示）
+    const GAP = 46, lastX = x(DATA.length - 1);
+    let prevX = -Infinity;
     DATA.forEach((r, i) => {
       const last = i === DATA.length - 1;
       s += `<circle cx="${x(i)}" cy="${y(r[1])}" r="${last ? 6 : 4}" fill="${last ? '#d9483b' : '#0b4f6c'}" stroke="#fff" stroke-width="2"><title>${r[0]}：${r[1]}kg</title></circle>`;
-      if (i % every === 0 || last) {
+      if (last || (x(i) - prevX >= GAP && lastX - x(i) >= GAP)) {
+        prevX = x(i);
         s += `<text x="${x(i)}" y="${H-B+22}" font-size="12" text-anchor="middle" fill="#6b7280">${r[0]}</text>`;
       }
     });
