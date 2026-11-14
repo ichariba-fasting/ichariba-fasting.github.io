@@ -551,6 +551,7 @@
    ニックネーム、スタート体重、目標体重、毎日の記録
    ========================================================= */
 const NICKNAME = "SHOKO";   // 決まったら書き換え
+const START_DATE   = "10/11";         // スタートした日
 const START_WEIGHT = 63.0;            // スタート時の体重（kg）
 const GOAL_WEIGHT  = 53.0;           // 目標体重（kg）＝スタート−10kg
 
@@ -581,7 +582,7 @@ setTimeout(() => document.getElementById("pFill").style.width = rate + "%", 200)
 
 // グラフを描く
 (function drawChart(){
-  const DATA = [["スタート", START_WEIGHT], ...RECORDS]; // グラフはスタート体重から描く
+  const DATA = [[START_DATE, START_WEIGHT], ...RECORDS]; // グラフはスタート体重から描く
   const svg = document.getElementById("chart");
   const W = 800, H = 340, L = 56, R = 24, T = 24, B = 44;
   const ys = DATA.map(r => r[1]).concat([START_WEIGHT, GOAL_WEIGHT]);
