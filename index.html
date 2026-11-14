@@ -165,7 +165,9 @@
   /* 講座 */
   .course{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   @media(max-width:820px){.course{grid-template-columns:1fr}}
-  .course .card{border-top-color:var(--sango)}
+  .course .card{border-top-color:var(--sango);display:flex;flex-direction:column}
+  .card-link{margin-top:auto;padding-top:14px;align-self:flex-start;color:var(--sango);font-weight:700;text-decoration:none;border-bottom:2px solid var(--kiiro)}
+  .card-link:hover{color:var(--umi)}
   .soon{display:inline-block;background:var(--kiiro);color:var(--umi-deep);font-weight:700;font-size:12px;padding:0 10px;border-radius:999px;margin-left:6px;vertical-align:middle}
 
   /* プロフィール */
@@ -478,12 +480,14 @@
     </div>
     <div class="course">
       <div class="card">
-        <h3>はじめてのファスティング講座<span class="soon">準備中</span></h3>
+        <h3>はじめてのファスティング講座</h3>
         <p>安全な進め方、準備期・回復期の食事、お薬との付き合い方を、薬剤師がわかりやすくお伝えします。</p>
+        <a href="https://note.com/ichariba_fasting/membership" class="card-link" target="_blank" rel="noopener">ゆいまーるプランで参加する →</a>
       </div>
       <div class="card">
-        <h3>みんなで伴走サポート<span class="soon">準備中</span></h3>
+        <h3>みんなで伴走サポート</h3>
         <p>ひとりだと続かない方へ。仲間と記録を見せ合いながら、決めた期間をやりきるサポートです。</p>
+        <a href="https://note.com/ichariba_fasting/membership" class="card-link" target="_blank" rel="noopener">ゆいまーるプランで参加する →</a>
       </div>
     </div>
     <div class="yuimaaru" id="yuimaaru">
