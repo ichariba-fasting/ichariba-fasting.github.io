@@ -176,6 +176,8 @@
   .profile{display:grid;grid-template-columns:200px 1fr;gap:32px;align-items:center;background:#fff;border-radius:18px;padding:34px}
   @media(max-width:720px){.profile{grid-template-columns:1fr;text-align:center}}
   .avatar{width:180px;height:180px;border-radius:50%;margin:0 auto;background:radial-gradient(circle at 30% 30%,#1f7a8c,var(--umi-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-family:"Shippori Mincho",serif;font-size:60px;font-weight:800;border:6px solid var(--suna);box-shadow:0 0 0 3px var(--kiiro)}
+  .avatar{overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
   .profile h3{font-size:26px;color:var(--umi-deep)}
   .profile .role{color:var(--sango);font-weight:700;margin-bottom:8px}
   .profile ul{list-style:none;margin-top:10px}
@@ -519,7 +521,7 @@
       <h2>プロフィール</h2>
     </div>
     <div class="profile">
-      <div class="avatar">い</div>
+      <div class="avatar"><img src="profile.jpg" alt="プロフィール写真"></div>
       <div>
         <h3 class="nickname">（ニックネーム）</h3>
         <p class="role">薬剤師／沖縄在住／産後ママ</p>
