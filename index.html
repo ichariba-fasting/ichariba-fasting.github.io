@@ -142,6 +142,18 @@
   .story .src a{color:var(--umi)}
   .alert{margin-top:22px;background:var(--sango);color:#fff;border-radius:12px;padding:18px 22px;font-weight:500}
 
+  /* noteの記事 */
+  .note-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.note-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.note-grid{grid-template-columns:1fr}}
+  .note-card{display:block;background:#fff;border-radius:14px;overflow:hidden;text-decoration:none;color:var(--sumi);border-bottom:4px solid var(--kiiro);box-shadow:0 6px 20px rgba(11,79,108,.06);transition:transform .2s}
+  .note-card:hover{transform:translateY(-3px)}
+  .note-card img{width:100%;aspect-ratio:1.91/1;object-fit:cover;display:block;background:var(--line)}
+  .note-card .body{padding:14px 16px 16px}
+  .note-card .date{font-size:12.5px;color:var(--hai)}
+  .note-card h3{font-size:16px;line-height:1.6;color:var(--umi-deep);margin-top:2px}
+  .note-empty{text-align:center;background:#fff;border-radius:14px;padding:30px 20px;color:var(--hai)}
+
   /* 講座 */
   .course{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   @media(max-width:820px){.course{grid-template-columns:1fr}}
@@ -175,6 +187,7 @@
       <li><a href="#medical">医療情報</a></li>
       <li><a href="#research">研究</a></li>
       <li><a href="#story">体験</a></li>
+      <li><a href="#note">note</a></li>
       <li><a href="#course">講座</a></li>
       <li><a href="#profile">プロフィール</a></li>
     </ul>
@@ -430,6 +443,21 @@
   </div>
 </section>
 
+<!-- noteの記事（notes.json から自動で表示） -->
+<section id="note" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">NOTE</span>
+      <h2>noteの最新記事</h2>
+      <p>ファスティングの記録や気づきを、noteでも綴っています</p>
+    </div>
+    <div class="note-grid" id="noteList"></div>
+    <p style="text-align:center;margin-top:26px">
+      <a href="https://note.com/ichariba_fasting" class="btn" target="_blank" rel="noopener">noteをもっと読む</a>
+    </p>
+  </div>
+</section>
+
 <!-- 講座 -->
 <section id="course">
   <div class="wrap">
@@ -561,6 +589,26 @@ setTimeout(() => document.getElementById("pFill").style.width = rate + "%", 200)
     s += `<text x="${x(RECORDS.length-1)}" y="${y(lr[1])-14}" font-size="13" text-anchor="end" fill="#d9483b" font-weight="700">${lr[1].toFixed(1)}kg</text>`;
   }
   svg.innerHTML = s;
+})();
+
+/* noteの記事：GitHubが3時間ごとに notes.json を更新します */
+(async function(){
+  const box = document.getElementById("noteList");
+  const esc = t => String(t).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  let items = [];
+  try {
+    const res = await fetch("notes.json", {cache: "no-cache"});
+    if (res.ok) items = await res.json();
+  } catch (e) {}
+  if (!items.length) {
+    box.outerHTML = '<p class="note-empty">記事は準備中です。公開したら、ここに自動で表示されます。</p>';
+    return;
+  }
+  box.innerHTML = items.map(n => `
+    <a class="note-card" href="${esc(n.url)}" target="_blank" rel="noopener">
+      ${n.thumbnail ? `<img src="${esc(n.thumbnail)}" alt="" loading="lazy">` : ""}
+      <div class="body"><div class="date">${esc(n.date)}</div><h3>${esc(n.title)}</h3></div>
+    </a>`).join("");
 })();
 </script>
 </body>
