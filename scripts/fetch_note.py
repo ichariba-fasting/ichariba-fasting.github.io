@@ -7,7 +7,7 @@ from email.utils import parsedate_to_datetime
 
 NOTE_ID = "ichariba_fasting"
 # タイトルにこの言葉のどれかが入っている記事だけを載せる
-KEYWORDS = ["ファスティング", "断食", "いちゃりば", "イチャリバ", "腹八分", "減量", "ダイエット", "体重"]
+KEYWORDS = ["ファスティング", "断食", "ゆいまーる", "ユイマール", "いちゃりば", "イチャリバ", "腹八分", "減量", "ダイエット", "体重"]
 MAX_ITEMS = 6
 
 NS = {"media": "http://search.yahoo.com/mrss/"}
