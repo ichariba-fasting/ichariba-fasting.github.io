@@ -274,6 +274,32 @@
   .cost-src{margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.85);text-align:center}
   .cost-src a{color:#fff}
 
+  /* 薬草図鑑をコンパクトに */
+  .herb-grid{grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:900px){.herb-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:640px){.herb-grid{grid-template-columns:1fr 1fr;gap:10px}}
+  .herb-card{padding:12px 12px 10px;border-radius:14px}
+  .chara{padding:8px 6px;margin-bottom:8px}
+  .chara svg{width:78px;height:78px}
+  .say{font-size:11.5px;padding:3px 8px;margin-top:6px}
+  .herb-card h3{font-size:17px;text-align:center}
+  .herb-name{font-size:11.5px;text-align:center}
+  .herb-more{margin-top:6px}
+  .herb-more summary,.herb-tips summary{cursor:pointer;list-style:none;font-weight:700;color:var(--kusa)}
+  .herb-more summary::-webkit-details-marker,.herb-tips summary::-webkit-details-marker{display:none}
+  .herb-more summary{font-size:13px;text-align:center;border-top:1px dashed var(--line);padding-top:6px}
+  .herb-more summary::after,.herb-tips summary::after{content:" ＋"}
+  .herb-more[open] summary::after,.herb-tips[open] summary::after{content:" −"}
+  .herb-more dd{font-size:13.5px;line-height:1.75}
+  .herb-more .memo{font-size:13px;margin-top:10px}
+  .m-tag{display:inline-block;font-size:11px;font-weight:700;color:#fff;border-radius:4px;padding:0 6px;margin:4px 6px 0 0;line-height:1.7}
+  .m-eff{background:var(--kusa)}
+  .m-care{background:var(--sango)}
+  .herb-tips{margin-top:20px;padding:16px 22px}
+  .herb-tips summary h3{display:inline;font-size:17px}
+  .herb-tips[open] summary{margin-bottom:8px}
+  .herb-intro{margin-bottom:22px}
+
   footer{background:var(--midori-deep);color:#d6eadf;font-size:13px;padding:34px 0;text-align:center}
   footer .disc{max-width:720px;margin:0 auto 14px;text-align:left;line-height:1.8}
   footer strong{color:var(--ki)}
@@ -519,13 +545,16 @@
         </div>
         <h3>うっちんくん</h3>
         <p class="herb-name">ウコン（うっちん）｜ショウガ科</p>
+        <details class="herb-more">
+          <summary>くわしく見る</summary>
         <dl>
           <dt>島での使われ方</dt>
-          <dd>「うっちん茶」として毎日の暮らしで飲まれ、料理の色づけにも使われてきました。秋ウコン・春ウコン・紫ウコンなどの種類があります。</dd>
+          <dd>うっちん茶や料理の色づけに。秋・春・紫ウコンなどの種類があります。</dd>
           <dt>研究では</dt>
-          <dd>黄色い成分クルクミンが注目され、研究がたくさんあります。ただ体に吸収されにくく、人での効果ははっきりしないものが多いです。</dd>
+          <dd>黄色い成分クルクミンの研究は多いものの、体に吸収されにくい成分です。</dd>
         </dl>
-        <p class="memo"><b>薬剤師メモ</b>サプリなどの濃縮されたもので、肝臓をいためた報告があります。肝臓の病気・胆石がある方、血液をサラサラにするお薬を飲んでいる方は相談を。</p>
+        <p class="memo"><b>薬剤師メモ</b><span class="m-tag m-eff">効果</span>クルクミンに炎症をおさえる働きが期待されていますが、人での効果ははっきりしていません。<br><span class="m-tag m-care">注意</span>サプリで肝臓をいためた報告あり。肝臓の病気・胆石のある方、血液をサラサラにする薬を飲んでいる方は相談を。</p>
+        </details>
       </article>
 
       <!-- サクナちゃん -->
@@ -546,13 +575,16 @@
         </div>
         <h3>サクナちゃん</h3>
         <p class="herb-name">長命草（ボタンボウフウ）｜セリ科</p>
+        <details class="herb-more">
+          <summary>くわしく見る</summary>
         <dl>
           <dt>島での使われ方</dt>
-          <dd>海辺の岩場に育つ草。葉を天ぷらや白和え、青汁などにして食べてきました。「1株食べると1日長生きする」と言われたのが名前の由来とされます。</dd>
+          <dd>海辺に育つ草。天ぷらや青汁に。「1株食べると1日長生き」が名前の由来とされます。</dd>
           <dt>研究では</dt>
-          <dd>ポリフェノールなどの成分が調べられていますが、多くは試験管や動物での段階です。</dd>
+          <dd>多くは試験管や動物での段階です。</dd>
         </dl>
-        <p class="memo"><b>薬剤師メモ</b>野菜として食べる量なら心配は少ないですが、粉末やサプリでたくさんとるときは注意。セリ科（セロリ・にんじん等）にアレルギーがある方は避けましょう。</p>
+        <p class="memo"><b>薬剤師メモ</b><span class="m-tag m-eff">効果</span>ポリフェノールなどを含みますが、人での効果はまだ確かめられていません。<br><span class="m-tag m-care">注意</span>粉末・サプリのとりすぎに注意。セリ科（セロリ・にんじん等）アレルギーの方は避けて。</p>
+        </details>
       </article>
 
       <!-- ゴーヤーにぃにぃ -->
@@ -572,13 +604,16 @@
         </div>
         <h3>ゴーヤーにぃにぃ</h3>
         <p class="herb-name">ゴーヤー（ニガウリ）｜ウリ科</p>
+        <details class="herb-more">
+          <summary>くわしく見る</summary>
         <dl>
           <dt>島での使われ方</dt>
-          <dd>ゴーヤーチャンプルーでおなじみの夏野菜。暑い時期の食欲がないときにも、食卓によく並んできました。</dd>
+          <dd>ゴーヤーチャンプルーでおなじみの夏野菜です。</dd>
           <dt>研究では</dt>
-          <dd>血糖値への作用が調べられていますが、人での研究は小規模なものが多く、はっきりした結論はまだ出ていません。</dd>
+          <dd>人での研究は小規模なものが中心です。</dd>
         </dl>
-        <p class="memo"><b>薬剤師メモ</b>糖尿病のお薬を飲んでいる方がエキスやサプリでとると、血糖値が下がりすぎるおそれも。妊娠中は濃縮されたものは避け、ふだんの料理で楽しみましょう。</p>
+        <p class="memo"><b>薬剤師メモ</b><span class="m-tag m-eff">効果</span>血糖値への作用が研究されていますが、結論はまだ出ていません。<br><span class="m-tag m-care">注意</span>糖尿病の薬と一緒にエキス・サプリをとると低血糖のおそれ。妊娠中は濃縮品を避けて。</p>
+        </details>
       </article>
 
       <!-- フーチバーおばぁ -->
@@ -601,13 +636,16 @@
         </div>
         <h3>フーチバーおばぁ</h3>
         <p class="herb-name">フーチバー（ニシヨモギ）｜キク科</p>
+        <details class="herb-more">
+          <summary>くわしく見る</summary>
         <dl>
           <dt>島での使われ方</dt>
-          <dd>フーチバージューシー（炊き込みご飯）や、ヤギ汁・沖縄そばの薬味に。強い香りで、においをやわらげてくれます。</dd>
+          <dd>フーチバージューシーやヤギ汁、沖縄そばの薬味に。</dd>
           <dt>研究では</dt>
-          <dd>香りの成分やポリフェノールが調べられていますが、人での効果を確かめた研究は多くありません。</dd>
+          <dd>香り成分などが調べられている段階です。</dd>
         </dl>
-        <p class="memo"><b>薬剤師メモ</b>キク科（ブタクサ・菊など）にアレルギーがある方は注意。妊娠中は、お茶やエキスで大量にとるのは控えましょう。</p>
+        <p class="memo"><b>薬剤師メモ</b><span class="m-tag m-eff">効果</span>強い香りで料理のくさみをやわらげます。体への効果を確かめた人の研究は多くありません。<br><span class="m-tag m-care">注意</span>キク科（ブタクサ・菊など）アレルギーの方は注意。妊娠中は大量にとらないで。</p>
+        </details>
       </article>
 
       <!-- バンシルーちゃん -->
@@ -628,13 +666,16 @@
         </div>
         <h3>バンシルーちゃん</h3>
         <p class="herb-name">グァバ（バンシルー）｜フトモモ科</p>
+        <details class="herb-more">
+          <summary>くわしく見る</summary>
         <dl>
           <dt>島での使われ方</dt>
-          <dd>庭先でもよく見かける果物。葉を乾かしてお茶にし、ふだんから飲まれています。</dd>
+          <dd>庭先でもよく見る果物。葉を乾かしてお茶にします。</dd>
           <dt>研究では</dt>
-          <dd>葉に含まれる「グァバ葉ポリフェノール」は、糖の吸収をおだやかにする成分として、特定保健用食品（トクホ）にも使われています。</dd>
+          <dd>食後の血糖値の上がり方への作用が、人で確かめられています。</dd>
         </dl>
-        <p class="memo"><b>薬剤師メモ</b>糖尿病のお薬を飲んでいる方は、自己判断でたくさん飲まず主治医に相談を。お茶は治療の代わりにはなりません。</p>
+        <p class="memo"><b>薬剤師メモ</b><span class="m-tag m-eff">効果</span>葉のポリフェノールが糖の吸収をおだやかにします（トクホの成分）。<br><span class="m-tag m-care">注意</span>糖尿病の薬を飲んでいる方は、血糖が下がりすぎないよう主治医に相談を。</p>
+        </details>
       </article>
 
       <!-- サンニンねぇねぇ -->
@@ -659,13 +700,16 @@
         </div>
         <h3>サンニンねぇねぇ</h3>
         <p class="herb-name">月桃（サンニン）｜ショウガ科</p>
+        <details class="herb-more">
+          <summary>くわしく見る</summary>
         <dl>
           <dt>島での使われ方</dt>
-          <dd>旧暦12月8日の「ムーチー」で、おもちを包む葉として使われます。さわやかな香りがあり、お茶や虫よけにも使われてきました。</dd>
+          <dd>ムーチー（旧暦12月8日）でおもちを包む葉。お茶や虫よけにも。</dd>
           <dt>研究では</dt>
-          <dd>葉のポリフェノールなどが調べられていますが、多くは試験管や動物での段階です。</dd>
+          <dd>葉のポリフェノールなどを調べている段階です。</dd>
         </dl>
-        <p class="memo"><b>薬剤師メモ</b>月桃茶は昔から飲まれていますが、妊娠中・授乳中の安全性を確かめた研究は少ないです。気になる方は量を控えめに。</p>
+        <p class="memo"><b>薬剤師メモ</b><span class="m-tag m-eff">効果</span>さわやかな香りが楽しめます。体への効果は試験管・動物での研究が中心です。<br><span class="m-tag m-care">注意</span>妊娠中・授乳中の安全性は確かめられていないため、控えめに。</p>
+        </details>
       </article>
 
       <!-- クヮーギちゃん -->
@@ -689,19 +733,22 @@
         </div>
         <h3>クヮーギちゃん</h3>
         <p class="herb-name">桑（クヮーギ）｜クワ科</p>
+        <details class="herb-more">
+          <summary>くわしく見る</summary>
         <dl>
           <dt>島での使われ方</dt>
-          <dd>葉はお茶に、実（マルベリー）はおやつに。雷や地震のときに「クヮーギヌシチャ（桑の木の下）」と唱える、魔よけの言い伝えもあります。</dd>
+          <dd>葉はお茶、実はおやつに。「クヮーギヌシチャ」と唱える魔よけの言い伝えも。</dd>
           <dt>研究では</dt>
-          <dd>葉に含まれる「DNJ（デオキシノジリマイシン）」が糖の吸収をおだやかにすると報告され、食後の血糖値に関する機能性表示食品にも使われています。</dd>
+          <dd>食後の血糖値への作用が、人で調べられています。</dd>
         </dl>
-        <p class="memo"><b>薬剤師メモ</b>糖尿病のお薬、特に「食後の血糖値を下げるお薬」と働きが似ているため、一緒にとると効きすぎることも。おなかの張りやおならが増えることがあります。</p>
+        <p class="memo"><b>薬剤師メモ</b><span class="m-tag m-eff">効果</span>葉のDNJが糖の吸収をおだやかにします（機能性表示食品の成分）。<br><span class="m-tag m-care">注意</span>糖尿病の薬と一緒だと効きすぎることも。おなかの張り・おならが増えることがあります。</p>
+        </details>
       </article>
 
     </div>
 
-    <div class="herb-tips">
-      <h3>ファスティング中に薬草茶を飲むときは</h3>
+    <details class="herb-tips">
+      <summary><h3>ファスティング中に薬草茶を飲むときは</h3></summary>
       <ul>
         <li>ノンカフェインのものが多く、水分補給の選択肢になります。砂糖が入っていないものを選びましょう</li>
         <li>空腹のときに濃いものをたくさん飲むと、胃に負担がかかることがあります</li>
@@ -709,7 +756,7 @@
         <li>「天然だから安全」とは限りません。お薬を飲んでいる方は、飲み合わせを薬剤師に確認してください</li>
       </ul>
       <p class="src">参考：国立健康・栄養研究所「健康食品」の安全性・有効性情報（HFNet）、消費者庁 特定保健用食品の情報</p>
-    </div>
+    </details>
   </div>
 </section>
 
