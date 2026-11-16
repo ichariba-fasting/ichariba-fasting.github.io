@@ -313,6 +313,11 @@
   .bg-midori{background-color:var(--midori);background-image:radial-gradient(rgba(255,255,255,.09) 2px,transparent 2.6px);background-size:22px 22px}
   .bg-aka{background-color:var(--aka);background-image:radial-gradient(rgba(255,255,255,.12) 2px,transparent 2.6px);background-size:22px 22px}
   .bg-shiro{background:#fff}
+  .research{position:relative;overflow:hidden}
+  .research::before{content:"";position:absolute;right:max(2vw,calc(50% - 640px));top:40px;width:clamp(150px,20vw,260px);aspect-ratio:300/380;background:url(microscope.svg) center/contain no-repeat;opacity:.5;pointer-events:none}
+  .research::after{content:"";position:absolute;left:max(1vw,calc(50% - 660px));bottom:40px;width:clamp(110px,14vw,190px);aspect-ratio:300/380;background:url(microscope.svg) center/contain no-repeat;opacity:.22;transform:scaleX(-1) rotate(-8deg);pointer-events:none}
+  .research > .wrap{position:relative;z-index:1}
+  @media(max-width:720px){.research::before{width:120px;top:20px;right:6px;opacity:.35}.research::after{display:none}}
   .bg-ki .sec-head h2{color:var(--midori-deep)}
   .bg-ki .sec-head .en{color:var(--aka)}
   .bg-ki .sec-head p{color:#4a3d0c}
