@@ -342,6 +342,19 @@
     .sec-head p,.bg-ki .sec-head p,.bg-midori .sec-head p,.bg-aka .sec-head p,.sub-head p,.course-lead{border-radius:12px;font-size:14px}
   }
 
+  /* プロフィールをコンパクトに */
+  .profile{grid-template-columns:150px 1fr;gap:24px;padding:24px 26px}
+  .profile .avatar{width:140px;height:140px}
+  .profile h3{font-size:23px}
+  .profile .role{margin-bottom:4px}
+  .profile ul.prof-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .profile ul.prof-tags li{background:#fdf3d6;border:1px solid #f0d78a;border-radius:999px;padding:1px 12px;font-size:13px}
+  .profile ul.prof-tags li::before{content:none}
+  .sengen{padding:26px 26px}
+  .sengen h3{font-size:clamp(20px,3vw,24px)}
+  .sengen p{margin-top:8px}
+  @media(max-width:720px){.profile{grid-template-columns:1fr}.profile ul.prof-tags{justify-content:center}}
+
 </style>
 </head>
 <body>
@@ -947,31 +960,22 @@
       <div>
         <h3 class="nickname">（ニックネーム）</h3>
         <p class="role">薬剤師・研究者／沖縄在住／産後ママ</p>
-        <p>病院・大学病院・調剤薬局で薬剤師として働いてきました。1人目の出産後に−10kgを達成し、2人目の出産後の今、ふたたびファスティングに挑戦中。医療者として「正しく、安全に、着実に」をモットーに発信しています。</p>
-        <p style="margin-top:8px"><a href="#sengen" style="font-weight:700">わたしの決意と挑戦の記録を見る ↓</a></p>
-        <ul>
-          <li>薬剤師・研究者</li>
+        <p>病院・大学病院・調剤薬局で勤務。1人目の産後に−10kgを達成し、2人目の産後の今、再挑戦中。モットーは「正しく、安全に、着実に」。</p>
+        <ul class="prof-tags">
           <li>京都の大学で薬学を学ぶ</li>
-          <li>病院・大学病院・調剤薬局での勤務経験</li>
-          <li>栄養・救急・臨床研究の分野で研修を受け、資格を取得</li>
+          <li>栄養・救急・臨床研究の研修・資格</li>
           <li>沖縄生まれ・沖縄育ち</li>
         </ul>
+        <p style="margin-top:8px"><a href="#sengen" style="font-weight:700">決意と記録を見る ↓</a></p>
       </div>
     </div>
 
     <!-- わたしの決意 -->
     <div class="sengen" id="sengen" style="margin-top:28px">
       <h3>わたしの決意</h3>
-      <p class="kikkake"><b>覚悟を決めた日のこと。</b><br>
-      いつも歩いている平らな道で、ほんの少しでっぱったところに足をひっかけ、派手に転びました。<br>
-      「足が上がらなくなっている」――そのことが、何よりショックでした。</p>
-      <p>1人目の出産後には、このページで紹介している同じ方法で−10kgを達成しました。<br>
-      そして2人目の出産を経た今、変わった体と、もう一度ちゃんと向き合う。<br>
-      3か月で産後−10kgを目標に、無理なく、でも本気で。<br>
-      数字はすべてここで公開します。うまくいった日も、そうでない日も。<br>
-      同じように頑張る誰かの励みになれたら嬉しいです。</p>
-      <p>そして薬剤師及び研究者として、沖縄の、そして世界の健康長寿に寄与していきたい。<br>
-      それが、わたしのもうひとつの決意です。</p>
+      <p class="kikkake"><b>覚悟を決めた日。</b>平らな道で足をひっかけて転び、「足が上がらなくなっている」ことに大きなショックを受けました。</p>
+      <p>1人目の産後、同じ方法で−10kgを達成。2人目の産後の今、3か月で−10kgを目標に、無理なく本気で取り組みます。数字はすべてここで公開します。同じように頑張る誰かの励みになれたら嬉しいです。</p>
+      <p>そして薬剤師及び研究者として、沖縄の、そして世界の健康長寿に寄与していきたい。それが、わたしのもうひとつの決意です。</p>
       <p class="sign">― <span class="nickname">（ニックネーム）</span></p>
     </div>
 
