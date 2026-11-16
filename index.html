@@ -328,6 +328,20 @@
   .bg-aka > .wrap > .note,.bg-aka > .wrap > .note a{color:#fff}
   .bg-ki .card,.bg-ki .note-card{box-shadow:0 6px 20px rgba(90,60,0,.12)}
 
+  /* 説明文を背景に負けないように（とくにスマホ） */
+  .sec-head p,.bg-ki .sec-head p,.bg-midori .sec-head p,.bg-aka .sec-head p,.sub-head p,.course-lead{
+    display:inline-block;background:rgba(255,255,255,.94);color:#2b2b2b;font-weight:700;font-size:14.5px;line-height:1.6;
+    padding:5px 16px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.08);margin-top:10px}
+  .sec-head .en{text-shadow:none}
+  .bg-midori .sec-head .en,.bg-aka .sec-head .en{color:#fff3b0}
+  .cost-src,.bg-aka > .wrap > .note{background:rgba(0,0,0,.22);border-radius:10px;padding:8px 12px;color:#fff}
+  @media(max-width:720px){
+    .bg-ki,.bg-midori,.bg-aka{background-image:none}
+    .hero p.lead{background:rgba(80,12,8,.6);padding:10px 14px;border-radius:12px;text-shadow:none}
+    .hero .eyebrow{background:rgba(80,12,8,.55)}
+    .sec-head p,.bg-ki .sec-head p,.bg-midori .sec-head p,.bg-aka .sec-head p,.sub-head p,.course-lead{border-radius:12px;font-size:14px}
+  }
+
 </style>
 </head>
 <body>
@@ -373,23 +387,23 @@
     <div class="sec-head">
       <span class="en">ABOUT</span>
       <h2>ファスティング（断食）とは</h2>
-      <p>「食べない」ではなく、「整える」ための時間</p>
+      <p>「食べない」ではなく「整える」時間</p>
     </div>
     <div class="cards">
       <div class="card">
         <span class="tag">基本</span>
         <h3>一定期間、食事を控える</h3>
-        <p>決められた期間、固形の食事を控えたり減らしたりして、食習慣を見直すきっかけにする方法です。</p>
+        <p>決めた期間、固形の食事を控えて、食習慣を見直すきっかけにする方法です。</p>
       </div>
       <div class="card">
         <span class="tag">大切なこと</span>
         <h3>最初の3日間と回復期</h3>
-        <p>私の場合は、準備期よりも、最初の3日間で食欲を落ち着かせることと、その後の回復期の過ごし方を大切にしています。急にもとの食事に戻すのは避けましょう。</p>
+        <p>最初の3日間で食欲を落ち着かせ、回復期はゆっくり食事を戻します。</p>
       </div>
       <div class="card">
         <span class="tag">わたしの考え</span>
         <h3>正しい情報で、安全に</h3>
-        <p>薬剤師として、効果をあおらず、注意点もきちんとお伝えします。体調を最優先に取り組みましょう。</p>
+        <p>効果をあおらず、注意点もお伝えします。体調が最優先です。</p>
       </div>
     </div>
   </div>
@@ -401,29 +415,29 @@
     <div class="sec-head">
       <span class="en">HISTORY</span>
       <h2>断食の歴史</h2>
-      <p>昔から、世界中で受けつがれてきた習慣です</p>
+      <p>世界で受けつがれてきた習慣</p>
     </div>
     <div class="cards">
       <div class="card">
         <span class="tag">古代〜</span>
         <h3>祈りと修行の断食</h3>
-        <p>断食は、世界の多くの宗教で古くから行われてきました。イスラム教のラマダン（日の出から日没まで食べない）や、キリスト教の四旬節など、今も続く習慣があります。日本でも、仏教や修験道の修行のひとつとして行われてきました。</p>
+        <p>イスラム教のラマダンやキリスト教の四旬節など、多くの宗教で続く習慣。日本でも仏教や修験道の修行として行われてきました。</p>
       </div>
       <div class="card">
         <span class="tag">20世紀</span>
         <h3>医療と暮らしの中へ</h3>
-        <p>ドイツでは1920年代ごろから、医師の管理のもとで行う断食が広まり、今も一部の医療機関で取り入れられています。日本でも昭和のころには各地に「断食道場」ができ、一般の人も取り組むようになりました。</p>
+        <p>ドイツでは1920年代から医師の管理のもとで広まり、日本でも昭和に各地で「断食道場」ができました。</p>
       </div>
       <div class="card">
         <span class="tag">現代</span>
         <h3>研究と新しいスタイル</h3>
-        <p>2016年、大隅良典さんがオートファジー（細胞のお掃除のしくみ）の研究でノーベル賞を受賞しました。2010年代からは「16時間断食」や「週2日だけ減らす」など、日常に取り入れやすい方法が広まり、研究も続いています。</p>
+        <p>2016年、大隅良典さんがオートファジーの研究でノーベル賞を受賞。「16時間断食」など続けやすい方法が広まっています。</p>
       </div>
       <div class="card" style="grid-column:1/-1;border-top-color:var(--sango)">
         <span class="tag">沖縄</span>
         <h3>長寿の島と「腹八分目」</h3>
-        <p>1970年代、琉球大学の鈴木信さんらが、沖縄の百歳以上の人たちを調べる「沖縄百寿者研究」を始めました。昔の沖縄のお年寄りは、野菜・いも・豆腐などを中心に、おなかいっぱいになる前に箸を置く「腹八分目」の食べ方をしていたと報告されています。研究チームは、1960年代より前の沖縄の人たちが、目安より10〜15%ほど少ないカロリーで暮らしていたと推定しています。</p>
-        <p style="margin-top:10px">一方で、食生活が変わるにつれて、沖縄の平均寿命の順位は下がり、2000年には男性が全国26位に（「26ショック」）。2015年には男性36位・女性7位になりました。長寿は「食べ方」だけで決まるものではありませんが、昔ながらの食文化を見直すヒントになりそうです。</p>
+        <p>1970年代に始まった「沖縄百寿者研究」によると、昔のお年寄りは野菜・いも・豆腐を中心に「腹八分目」で食べ、目安より10〜15%ほど少ないカロリーで暮らしていたと推定されています。</p>
+        <p style="margin-top:10px">食生活の変化とともに順位は下がり、2000年に男性26位（26ショック）、2015年には男性36位・女性7位に。昔の食べ方に、見直すヒントがありそうです。</p>
         <p style="margin-top:10px;font-size:13px;color:var(--hai)">出典：<a href="https://www.okinawaprogram.com/study.html" target="_blank" rel="noopener" style="color:var(--umi)">沖縄百寿者研究</a>／<a href="https://sp.m.jiji.com/english/show/19768" target="_blank" rel="noopener" style="color:var(--umi)">時事通信「長寿県沖縄」今は昔</a></p>
       </div>
     </div>
@@ -436,45 +450,42 @@
     <div class="sec-head">
       <span class="en">HOW TO</span>
       <h2>やり方とスケジュール</h2>
-      <p>私の場合は、準備期よりも「最初の3日間」と「回復期」を大切にしています</p>
+      <p>大切なのは「最初の3日間」と「回復期」</p>
     </div>
     <div class="med med-list med-check" id="medical">
       <h3>始める前に｜薬剤師からの確認事項</h3>
       <ul>
         <li><b>医師に相談してから：</b>妊娠中・授乳中、持病がある・通院中、成長期・ご高齢、やせ型の方</li>
-        <li><b>お薬を飲んでいる方：</b>食事量で効き方が変わることがあります（特に血糖値・血圧のお薬）。自己判断で中止・調整せず、主治医か薬剤師に相談を</li>
-        <li><b>すぐ中止するサイン：</b>強いめまい・ふらつき・冷や汗・手のふるえ・動悸・強い頭痛・吐き気・意識がぼんやりする。続くときは受診を</li>
-        <li><b>情報の見極め：</b>「必ず痩せる」「治る」などの断定や、特定の商品を勧める情報は慎重に。出典のある情報を選びましょう</li>
+        <li><b>お薬を飲んでいる方：</b>血糖値・血圧のお薬などは効き方が変わることも。自己判断せず相談を</li>
+        <li><b>すぐ中止するサイン：</b>強いめまい・冷や汗・手のふるえ・動悸・頭痛・吐き気など。続くときは受診を</li>
+        <li><b>情報の見極め：</b>「必ず痩せる」などの断定や商品のすすめは慎重に</li>
       </ul>
     </div>
     <div class="steps">
       <div class="step" style="background:var(--suna)">
         <div>
           <h3>最初の3日間｜液体だけで過ごす</h3>
-          <p>野菜ジュースとプロテインだけで過ごし、整腸剤もあわせて飲みます。</p>
           <ul>
-            <li>野菜ジュース＋プロテイン</li>
-            <li>整腸剤をいっしょに飲む</li>
-            <li>水分補給をしっかり行う</li>
-            <li>めまい・強いだるさなどがあれば無理せず中止する</li>
+            <li>野菜ジュース＋プロテイン＋整腸剤</li>
+            <li>水分をしっかりとる</li>
+            <li>めまい・強いだるさがあれば中止</li>
           </ul>
         </div>
       </div>
       <div class="step" style="background:var(--suna)">
         <div>
           <h3>回復期｜16時間断食（夕食を抜く）</h3>
-          <p>私の場合、最初の3日間で食欲が落ち着きます。空腹の時間をとることで体のリズムを整えるきっかけにして、回復期は夕食を抜く16時間断食を続けます。目標体重になるまで、これを続けます。</p>
+          <p>目標体重になるまで続けます。</p>
           <ul>
-            <li>夕食を抜き、16時間ほど空腹の時間をつくる</li>
-            <li>朝・昼はおかゆ・味噌汁など、消化のよいものから少しずつ戻す</li>
+            <li>朝・昼はおかゆ・味噌汁など消化のよいものから</li>
             <li>よく噛んで、ゆっくり食べる</li>
-            <li>夜おなかがすいたら、炭酸水を飲む</li>
-            <li>激しい運動は避け、軽いストレッチや散歩程度に</li>
+            <li>夜の空腹には炭酸水</li>
+            <li>運動は軽いストレッチや散歩程度に</li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="alert">このサイトの情報は一般的な内容です。診断や治療に代わるものではありません。体調に不安がある方は、医師・薬剤師にご相談ください。</div>
+    <div class="alert">一般的な情報です。診断・治療に代わるものではありません。不安な方は医師・薬剤師にご相談ください。</div>
   </div>
 </section>
 
@@ -484,17 +495,17 @@
     <div class="sec-head">
       <span class="en">RESEARCH</span>
       <h2>研究のいま</h2>
-      <p>わかっていること、まだわかっていないこと</p>
+      <p>わかっていること・いないこと</p>
     </div>
     <div class="lab-grid">
       <div class="lab">
         <span class="no">REPORT 01</span>
         <h3>最新の研究報告</h3>
         <ul>
-          <li>「時間を決めて食べる」「食べない日をつくる」などの断続的ファスティングは、ふつうのカロリー制限と比べて、体重の減り方に大きな差はないと報告されています（99件の研究のまとめ・2025年）</li>
-          <li>食べる時間を決めるだけの方法では、体重の差は1〜2kgほどと小さく、研究の確かさもまだ「低〜中程度」とされています（2025年の分析）</li>
-          <li>大切なのは「1日にとる量」で、方法は続けやすいものを選ぶのがよい、というのが専門家の見方です</li>
-          <li>授乳中のファスティングは研究が少なく、安全性はまだはっきりしていません。水分不足や長時間の絶食は母乳への影響が心配されるため、医師・助産師に相談を</li>
+          <li>断続的ファスティングと、ふつうのカロリー制限で、体重の減り方に大きな差はない（99件の研究のまとめ・2025年）</li>
+          <li>食べる時間を決めるだけでは、体重の差は1〜2kgほど（2025年）</li>
+          <li>大切なのは「1日にとる量」。続けやすい方法を選ぶのがよい</li>
+          <li>授乳中の安全性はまだ不明。医師・助産師に相談を</li>
         </ul>
         <p class="src">出典：<a href="https://bmjgroup.com/intermittent-fasting-comparable-to-traditional-diets-for-weight-loss/" target="_blank" rel="noopener">BMJ 2025;389:e082007</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/41036194/" target="_blank" rel="noopener">Front Nutr 2025</a>／<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/oby.24252" target="_blank" rel="noopener">Obesity 2025</a></p>
       </div>
@@ -502,11 +513,11 @@
         <span class="no">REPORT 02</span>
         <h3>細胞の「お掃除」オートファジー</h3>
         <ul>
-          <li>オートファジーは、細胞の中の古くなった部品を分解して再利用するしくみ。2016年に大隅良典さんがノーベル賞を受賞した研究です</li>
-          <li>空腹の時間がオートファジーを活発にすることは、主に動物や細胞の実験で確かめられてきました</li>
-          <li>人での研究も始まっています。6か月間、食べる時間や日を制限した人で、血液のオートファジーの指標が高かったという報告があります（2025年・探索的な分析）</li>
-          <li>5日間の「断食をまねた食事」を数か月くり返した人で、血液から推定した「生物学的年齢」が約2.5歳低かったという報告もあります（2024年）。ただし推定値で、研究者が関わる会社の食品を使った研究です</li>
-          <li>人で「細胞が若返る」「老化が止まる」とまでは、まだ確かめられていません</li>
+          <li>細胞の古い部品を分解して再利用するしくみ（2016年ノーベル賞）</li>
+          <li>空腹で活発になることは、主に動物や細胞の実験で確認</li>
+          <li>人でも、食事の時間を制限した人で指標が高かったという報告あり（2025年・探索的）</li>
+          <li>「断食をまねた食事」で生物学的年齢が約2.5歳低かった報告も（2024年・推定値、研究者が関わる会社の食品を使用）</li>
+          <li>「若返る」「老化が止まる」とまでは確かめられていない</li>
         </ul>
         <p class="src">出典：<a href="https://doaj.org/article/07535cae9755447cbf16d32138fdada8" target="_blank" rel="noopener">Nature Communications 2024</a>／<a href="https://www.researchgate.net/publication/391597820_Intermittent_time-restricted_eating_may_increase_autophagic_flux_in_humans_an_exploratory_analysis" target="_blank" rel="noopener">J Physiol 2025</a></p>
       </div>
@@ -520,9 +531,8 @@
     <div class="sec-head">
       <span class="en">OKINAWAN HERBS</span>
       <h2>ぬちぐすい薬草図鑑</h2>
-      <p>島の薬草たちが、キャラクターになって自己紹介します</p>
+      <p>「ぬちぐすい（命の薬）」の薬草たち</p>
     </div>
-    <p class="herb-intro">沖縄では、体をいたわる食べものを<b>「ぬちぐすい（命の薬）」</b>と呼んできました。<br>昔からの知恵と、いまの研究でわかっていること、そして薬剤師として気をつけてほしいことをまとめました。</p>
 
     <div class="herb-grid">
 
@@ -766,38 +776,36 @@
     <div class="sec-head">
       <span class="en">BODY &amp; PAIN</span>
       <h2>体重を落とすと、体の痛みは軽くなる？</h2>
-      <p>研究でわかっていることと、わたしの体験</p>
+      <p>研究とわたしの体験から</p>
     </div>
     <div class="cards">
       <div class="card">
         <span class="tag">ひざ</span>
         <h3>1kg減ると、ひざの負担は約4kg分軽く</h3>
-        <p>ひざの痛み（変形性膝関節症）がある人の研究で、体重が1kg減るごとに、歩くときにひざにかかる力が約4kg分減ったと報告されています。食事と運動で体重を約1割減らしたグループは、運動だけのグループより、痛みが軽くなり動きやすくなりました。</p>
+        <p>ひざの痛みがある人で、1kg減るごとに歩くときの負担が約4kg分減少。体重を約1割減らすと、痛みも軽くなりました。</p>
       </div>
       <div class="card">
         <span class="tag">腰</span>
         <h3>体重が多いほど、腰痛が多い傾向</h3>
-        <p>多くの研究をまとめた分析で、太りすぎや肥満の人は、腰痛のある人の割合が高いことがわかっています。ただし、体重を減らすと腰痛がよくなるかを確かめた研究はまだ少なく、今後の研究が待たれます。</p>
+        <p>肥満の人は腰痛の割合が高い傾向。ただし、減量で腰痛がよくなるかは研究がまだ少ないです。</p>
       </div>
       <div class="card">
         <span class="tag">足</span>
         <h3>体重は、かかとの痛みの要因のひとつ</h3>
-        <p>体重が重いことは、かかとが痛む「足底腱膜炎」になりやすい要因のひとつとされています。診療ガイドラインでは、ストレッチやインソールなどの理学療法と組み合わせて取り組むことが勧められています。</p>
+        <p>体重は「足底腱膜炎」の要因のひとつ。ストレッチやインソールとの組み合わせが勧められています。</p>
       </div>
     </div>
     <p class="note" style="text-align:center;margin-top:14px">出典：<a href="https://pubmed.ncbi.nlm.nih.gov/15986358/" target="_blank" rel="noopener">Arthritis Rheum 2005</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/24065013/" target="_blank" rel="noopener">JAMA 2013（IDEA試験）</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/20007994/" target="_blank" rel="noopener">Am J Epidemiol 2010</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/38037331/" target="_blank" rel="noopener">JOSPT 2023</a></p>
 
     <div class="story" style="margin-top:34px">
       <h3 class="mincho" style="color:var(--umi-deep);font-size:21px;margin-bottom:12px">わたしの場合｜足底腱膜炎（個人の体験です）</h3>
-      <p>以前、かかとの痛みが続き「足底腱膜炎」と診断されました。体外衝撃波という新しい治療も受けましたが、私の場合は痛みがなかなか引きませんでした。</p>
-      <p>転機になったのは、体重を落とすことと、リハビリを続けたこと。少しずつ痛みがやわらぎ、改善していきました。研究で言われていることを、自分の体で実感した経験です。</p>
+      <p>かかとの痛みが続き「足底腱膜炎」と診断。体外衝撃波治療でも痛みは引きませんでした。転機は、体重を落とすこととリハビリ。少しずつ痛みがやわらぎ、研究で言われていることを自分の体で実感しました。</p>
       <div class="note">
         <h3>薬剤師として伝えたいこと</h3>
         <ul>
-          <li>体重を落とすことは、ひざ・腰・足など、体を支える部分の負担を減らす「自分でできる」取り組みのひとつです</li>
-          <li>体重だけで痛みが治るわけではありません。ストレッチやリハビリ、病院での治療と組み合わせることが大切です</li>
-          <li>産後は体重が変化しやすく、抱っこなどで体に負担がかかりやすい時期。無理のないペースで進めましょう</li>
-          <li>痛みが続く・しびれがある・急に強く痛むときは、自己判断せず整形外科を受診してください</li>
+          <li>減量は、ひざ・腰・足の負担を減らす「自分でできる」こと</li>
+          <li>リハビリや治療と組み合わせるのが大切</li>
+          <li>痛みが続く・しびれる・急に強く痛むときは整形外科へ</li>
         </ul>
       </div>
     </div>
@@ -810,7 +818,7 @@
     <div class="sec-head">
       <span class="en">HEALTH &amp; COST</span>
       <h2>肥満改善と医療費削減</h2>
-      <p>体重を整えることは、自分の体にも、みんなの医療費にもやさしい</p>
+      <p>体にも、医療費にもやさしい減量</p>
     </div>
 
     <div class="cost-stats">
@@ -824,28 +832,27 @@
       <div class="card">
         <span class="tag">沖縄の現状</span>
         <h3>男性の4割以上が肥満</h3>
-        <p>沖縄県の調査（2024年度）では、20歳以上の肥満者（BMI25以上）は男性41.1%・女性27.5%。男性の40代・50代では5割を超えています。全国（2023年）は男性31.5%・女性21.1%で、男女とも全国を上回っています。</p>
+        <p>沖縄の肥満者（BMI25以上）は男性41.1%・女性27.5%（2024年度）。40〜50代の男性は5割超で、男女とも全国を上回ります。</p>
       </div>
       <div class="card">
         <span class="tag">肥満と医療費</span>
         <h3>体重が多いほど医療費も増える</h3>
-        <p>宮城県大崎市の40〜79歳を追った研究では、BMI21〜22.9の人に比べて、医療費はBMI25〜29.9の人で9.8%、BMI30以上の人で22.3%高くなっていました。日本の国民医療費は48兆915億円（令和5年度）と、過去最高を更新しています。</p>
+        <p>標準体重の人に比べ、医療費はBMI25〜29.9で9.8%、BMI30以上で22.3%高い（大崎研究）。国民医療費は過去最高の48兆円です。</p>
       </div>
       <div class="card">
         <span class="tag">減量の効果</span>
         <h3>まずは3%、できれば5〜10%</h3>
-        <p>特定保健指導を受けた人の分析では、体重を3%以上減らすと、血圧・血糖・脂質などの検査値が改善していました。2型糖尿病の人の研究では、5〜10%の減量で血糖や血圧、中性脂肪がよくなり、減らすほど改善が大きくなっていました。</p>
+        <p>3%の減量で血圧・血糖・脂質が改善。5〜10%減らすと、さらに改善が大きくなります。</p>
       </div>
     </div>
 
     <div class="cost-msg">
       <h3>薬剤師・研究者として伝えたいこと</h3>
       <ul>
-        <li>体重60kgの人なら、3%は約1.8kg。「まずは2kg」から、体は変わりはじめます</li>
-        <li>体重が整うことは、高血圧・糖尿病などの生活習慣病の予防につながり、将来の通院やお薬を減らせる可能性があります</li>
-        <li>一人ひとりの小さな減量の積み重ねが、沖縄の、そして日本の医療費を支えることにもつながります</li>
-        <li>ただし、医療費が実際にどれだけ減るかは、人や取り組み方によって異なり、研究でもまだ結論が分かれる部分があります</li>
-        <li>お薬を飲んでいる方は、体重が減るとお薬の量の見直しが必要になることも。自己判断せず、主治医・薬剤師に相談してください</li>
+        <li>60kgの人なら3%は約1.8kg。「まずは2kg」から</li>
+        <li>生活習慣病の予防で、将来の通院やお薬が減る可能性も</li>
+        <li>一人ひとりの減量が、沖縄と日本の医療費を支えます（効果の大きさは研究でも議論中）</li>
+        <li>お薬を飲んでいる方は、量の見直しが必要なことも。主治医・薬剤師に相談を</li>
       </ul>
       <p style="margin-top:14px;text-align:center"><a href="#yuimaaru" class="btn" style="margin-top:0">プランを見て、一緒に取り組む</a></p>
     </div>
@@ -859,7 +866,7 @@
     <div class="sec-head">
       <span class="en">NOTE</span>
       <h2>noteの最新記事</h2>
-      <p>ファスティングの記録や気づきを、noteでも綴っています</p>
+      <p>記録や気づきをnoteで発信中</p>
     </div>
     <div class="note-grid" id="noteList"></div>
     <p style="text-align:center;margin-top:26px">
@@ -875,23 +882,23 @@
     <div class="sec-head">
       <span class="en">SUPPORT</span>
       <h2>講座・サポートのご案内</h2>
-      <p>いちゃりばちょーでー。一緒に取り組む仲間を募集します</p>
+      <p>一緒に取り組む仲間を募集中</p>
     </div>
     <div class="course">
       <div class="card">
         <h3>はじめてのファスティング講座</h3>
-        <p>安全な進め方、準備期・回復期の食事、お薬との付き合い方を、薬剤師がわかりやすくお伝えします。</p>
+        <p>安全な進め方、食事、お薬との付き合い方を薬剤師が解説。</p>
       </div>
       <div class="card">
         <h3>みんなで伴走サポート</h3>
-        <p>ひとりだと続かない方へ。仲間と記録を見せ合いながら、決めた期間をやりぬくサポートです。</p>
+        <p>仲間と記録を見せ合い、決めた期間をやりぬくサポート。</p>
       </div>
     </div>
-    <p class="course-lead">講座・サポートの最新情報は、2つのプランのメンバーに先行してお知らせします ↓</p>
+    <p class="course-lead">最新情報はプランのメンバーに先行案内 ↓</p>
     <div class="yuimaaru" id="yuimaaru" style="margin-top:14px">
       <span class="tag">noteメンバーシップ</span>
       <h3>あなたに合うプランを選べます</h3>
-      <p>「ゆいまーる」は沖縄の言葉で、助け合いのこと。ひとりで抱えこまず、仲間と支え合いながら取り組めます。</p>
+      <p>「ゆいまーる」は沖縄の言葉で助け合いのこと。仲間と支え合って取り組めます。</p>
       <div class="plans">
         <div class="plan">
           <p class="plan-for">仲間と記録を見せ合って続けたい方に</p>
@@ -916,8 +923,8 @@
           <a href="https://note.com/ichariba_fasting/membership" class="btn plan-btn" target="_blank" rel="noopener">覚悟プランに参加する</a>
         </div>
       </div>
-      <p class="plan-note"><b>プランの終わり：</b>目標体重を達成したら、その後は自分でセルフコントロールしていけるよう、プランは卒業（終了）となります。</p>
-      <p class="small">※ どちらのボタンもnoteのメンバーシップのページに移動します。ページ内で希望のプランを選んでください。料金・内容はnoteでご確認ください。</p>
+      <p class="plan-note"><b>プランの終わり：</b>目標体重を達成したら卒業。その後は自分でセルフコントロールします。</p>
+      <p class="small">※ noteのページで希望のプランを選んでください。料金・内容はnoteでご確認ください。</p>
     </div>
     <p style="text-align:center;margin-top:30px">
       <!-- お問い合わせ用のGoogleフォームのURLができたら、href="#" を書き換えてください -->
@@ -972,7 +979,7 @@
     <div class="sub-head" id="kiroku">
       <span class="en">RECORD</span>
       <h3>記録の見える化</h3>
-      <p>毎日の体重を、そのまま公開しています<br>1か月に約3kgのペースを目安に進めています<br>ファスティングは1か月目に1回目を実施。2回目を実施予定です</p>
+      <p>毎日の体重を公開中（目安は月約3kg・ファスティング2回目を予定）</p>
     </div>
 
     <div class="stats">
