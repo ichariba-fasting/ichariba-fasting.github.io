@@ -359,15 +359,15 @@
   @media(max-width:720px){.profile{grid-template-columns:1fr}.profile ul.prof-tags{justify-content:center}}
 
   /* 記録の見える化をコンパクトに */
-  .sub-head{margin:34px 0 14px}
+  .sub-head{margin:28px 0 10px}
   .stats{gap:8px;margin-bottom:10px}
   .stat{padding:8px 6px;border-radius:10px}
   .stat .label{font-size:12px;line-height:1.5}
   .stat .num{font-size:24px;line-height:1.3}
-  .progress{padding:10px 16px;margin-bottom:10px}
+  .progress{padding:8px 14px;margin-bottom:8px}
   .progress .bar{height:10px;margin-top:4px}
-  .chart-box{padding:12px}
-  .chart-box svg{max-height:250px}
+  .chart-box{padding:10px}
+  .chart-box svg{max-height:200px}
   .chart-box .note{margin-top:4px}
   @media(max-width:720px){.stats{grid-template-columns:repeat(4,1fr);gap:6px}.stat .num{font-size:17px}.stat .label{font-size:11px}}
 
@@ -1008,7 +1008,7 @@
     <div class="sub-head" id="kiroku">
       <span class="en">RECORD</span>
       <h3>記録の見える化</h3>
-      <p>毎日の体重を公開中（目安は月約3kg・ファスティング2回目を予定）</p>
+      <p>体重の経過を公開中（目安は月約3kg）</p>
     </div>
 
     <div class="stats">
@@ -1041,7 +1041,7 @@
 <script>
 /* =========================================================
    ★ ここを書き換えます ★
-   ニックネーム、スタート体重、目標体重、毎日の記録
+   ニックネーム、スタート体重、目標体重、体重の記録
    ========================================================= */
 const NICKNAME = "SHOKO";   // 決まったら書き換え
 const START_DATE   = "10/11";         // スタートした日
