@@ -73,9 +73,10 @@
   @media(max-width:420px){nav .logo{font-size:15px}nav .nav-cta{padding:8px 12px;font-size:12px}}
 
   /* ヒーロー */
-  /* やんばるの森（朝もやの山並みとヒカゲヘゴ） */
-  .hero{background:url(yanbaru.svg) center bottom/cover no-repeat,radial-gradient(ellipse at 80% 10%,rgba(255,232,170,.35),transparent 55%),linear-gradient(180deg,#123f30 0%,#2b6a4f 55%,#3f7f60 100%);color:#fff;position:relative;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,34,25,.72) 0%,rgba(8,34,25,.35) 55%,rgba(8,34,25,0) 80%);pointer-events:none}
+  /* 沖縄の薬草（ゴーヤー棚・月桃・ウコン・長命草・フーチバー・グァバ・桑） */
+  .hero{background:url(hero-herbs.svg) center bottom/cover no-repeat,linear-gradient(180deg,#0c3f4c 0%,#10606a 60%,#178079 100%);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,40,46,.55) 0%,rgba(7,40,46,.25) 50%,rgba(7,40,46,0) 70%);pointer-events:none}
+  @media(max-width:720px){.hero{background-position:82% bottom,0 0}.hero::before{background:rgba(7,40,46,.62)}}
   .hero h1,.hero p.lead{text-shadow:0 2px 12px rgba(0,0,0,.35)}
   .hero h1 span{display:inline-block}
   .hero p.lead{word-break:auto-phrase}
