@@ -141,6 +141,8 @@
   .step::before{counter-increment:s;content:counter(s);font-family:"Shippori Mincho",serif;font-weight:800;font-size:30px;width:60px;height:60px;border-radius:50%;background:var(--umi);color:#fff;display:flex;align-items:center;justify-content:center}
   .step h3{font-size:19px;color:var(--umi-deep)}
   .step ul{padding-left:1.2em;margin-top:6px}
+  .course-cycle{margin-top:16px;background:#fff;color:var(--umi-deep);border:3px solid var(--ki);border-radius:14px;padding:14px 18px;text-align:center;font-size:17px}
+  .course-cycle b{color:var(--sango)}
 
   /* 医療情報 */
   .med-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
@@ -491,7 +493,15 @@
     <div class="steps">
       <div class="step" style="background:var(--suna)">
         <div>
-          <h3>最初の3日間｜液体だけで過ごす</h3>
+          <h3>1日目｜準備期</h3>
+          <ul>
+            <li>夜だけ断食（夕食を抜く）</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step" style="background:var(--suna)">
+        <div>
+          <h3>2〜3日目｜ファスティング期（液体だけで過ごす）</h3>
           <ul>
             <li>野菜ジュース＋プロテイン＋整腸剤</li>
             <li>水分をしっかりとる</li>
@@ -501,8 +511,8 @@
       </div>
       <div class="step" style="background:var(--suna)">
         <div>
-          <h3>回復期｜16時間断食（夕食を抜く）</h3>
-          <p>目標体重になるまで続けます。</p>
+          <h3>4日目から｜回復期（夕食だけ断食）</h3>
+          <p>その月の終わりまで続けます。</p>
           <ul>
             <li>朝・昼はおかゆ・味噌汁など消化のよいものから</li>
             <li>よく噛んで、ゆっくり食べる</li>
@@ -512,6 +522,7 @@
         </div>
       </div>
     </div>
+    <p class="course-cycle"><b>1か月を1クール</b>として、<b>3か月</b>くり返します。</p>
     <div class="alert">一般的な情報です。診断・治療に代わるものではありません。不安な方は医師・薬剤師にご相談ください。</div>
   </div>
 </section>
