@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ゆいまーるファスティング｜薬剤師と仲間で続けるファスティング</title>
-<meta name="description" content="ひとりで頑張らなくていい。沖縄の薬剤師が、仲間と支え合う「ゆいまーるプラン」で、正しく安全なファスティングをサポートします。">
+<meta name="description" content="ひとりで頑張らなくていい。沖縄の薬剤師が、仲間と支え合う「ゆいまーるプラン」「覚悟プラン」で、正しく安全なファスティングをサポートします。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -185,6 +185,23 @@
   .note-card h3{font-size:16px;line-height:1.6;color:var(--umi-deep);margin-top:2px}
   .note-empty{text-align:center;background:#fff;border-radius:14px;padding:30px 20px;color:var(--hai)}
 
+
+  /* プラン比較 */
+  .plans{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px;text-align:left}
+  @media(max-width:720px){.plans{grid-template-columns:1fr}}
+  .plan{position:relative;background:#fff;border:2px solid #cfe6dc;border-radius:16px;padding:22px 20px 20px;display:flex;flex-direction:column}
+  .plan-kakugo{border:3px solid var(--sango);box-shadow:0 8px 24px rgba(217,72,59,.18)}
+  .plan-badge{position:absolute;top:-13px;right:16px;background:var(--sango);color:#fff;font-weight:700;font-size:12px;padding:2px 12px;border-radius:999px}
+  .plan-for{font-size:13px;color:var(--hai);margin:0 !important}
+  .plan h4{font-family:"Shippori Mincho",serif;font-size:22px;color:var(--umi-deep);margin-top:2px}
+  .plan-kakugo h4{color:var(--sango)}
+  .plan .price{font-size:14px;color:var(--sumi);margin:2px 0 8px !important}
+  .plan .price b{font-family:"Shippori Mincho",serif;font-size:30px;margin:0 2px}
+  .plan ul{padding-left:1.2em;margin-bottom:6px}
+  .plan li{margin-bottom:4px;font-size:15px}
+  .plans .plan .plan-btn{margin-top:auto;align-self:center;font-size:15px}
+  .plan:not(.plan-kakugo) .plan-btn{background:var(--midori,#17744a)}
+  .plan-note{margin-top:18px !important;font-size:14px}
   /* ゆいまーるプラン */
   .yuimaaru{margin-top:28px;background:url(hero-herbs.svg?v=3) right bottom/auto 100% no-repeat,linear-gradient(160deg,#dff2ea 0%,#f3faea 100%);border:2px solid #bfe0cc;color:var(--umi-deep);border-radius:18px;padding:34px 28px;text-align:center;position:relative;overflow:hidden}
   .yuimaaru .tag{display:inline-block;background:var(--kiiro);color:var(--umi-deep);font-weight:700;font-size:12px;letter-spacing:.1em;padding:1px 12px;border-radius:999px}
@@ -201,6 +218,7 @@
   .course .card{border-top-color:var(--sango);display:flex;flex-direction:column}
   .card-link{margin-top:auto;padding-top:14px;align-self:flex-start;color:var(--sango);font-weight:700;text-decoration:none;border-bottom:2px solid var(--kiiro)}
   .card-link:hover{color:var(--umi)}
+  .course-lead{margin-top:22px;text-align:center;font-weight:700;color:#fff}
   .soon{display:inline-block;background:var(--kiiro);color:var(--umi-deep);font-weight:700;font-size:12px;padding:0 10px;border-radius:999px;margin-left:6px;vertical-align:middle}
 
   /* プロフィール */
@@ -291,7 +309,7 @@
 <nav>
   <div class="wrap nav-top">
     <a href="#top" class="logo">ゆいまーるファスティング</a>
-    <a href="#yuimaaru" class="nav-cta">ゆいまーるプラン</a>
+    <a href="#yuimaaru" class="nav-cta">プランを見る</a>
   </div>
   <div class="nav-menu">
     <ul>
@@ -315,7 +333,7 @@
     <span class="eyebrow">薬剤師が伴走する、沖縄発のファスティング</span>
     <h1><span>いちゃりば、</span><span>ちょーでー。</span><br><span><span class="aka">ゆいまーる</span>で、</span><span>やりぬく。</span></h1>
     <p class="lead">出会えば、みな兄弟。ひとりで抱えこまなくていい。<br>仲間と記録を見せ合い、薬剤師が一人ひとりに合わせてサポートします。<br>沖縄の知恵と正しい知識で、無理なく、着実に。</p>
-    <a href="#yuimaaru" class="btn">ゆいまーるプランを見る</a>
+    <a href="#yuimaaru" class="btn">ゆいまーる・覚悟プランを見る</a>
     <a href="#about" style="display:inline-block;margin-left:16px;color:#fff;font-weight:700">ファスティング（断食）とは →</a>
   </div>
   <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#f3c12f" d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,70 L0,70 Z"/></svg>
@@ -782,7 +800,7 @@
         <li>ただし、医療費が実際にどれだけ減るかは、人や取り組み方によって異なり、研究でもまだ結論が分かれる部分があります</li>
         <li>お薬を飲んでいる方は、体重が減るとお薬の量の見直しが必要になることも。自己判断せず、主治医・薬剤師に相談してください</li>
       </ul>
-      <p style="margin-top:14px;text-align:center"><a href="#yuimaaru" class="btn" style="margin-top:0">ゆいまーるプランで一緒に取り組む</a></p>
+      <p style="margin-top:14px;text-align:center"><a href="#yuimaaru" class="btn" style="margin-top:0">プランを見て、一緒に取り組む</a></p>
     </div>
     <p class="cost-src">出典：<a href="https://ryukyushimpo.jp/national/entry-5035817.html" target="_blank" rel="noopener">沖縄県 県民健康・栄養調査 2024年度（琉球新報）</a>／<a href="https://www.mhlw.go.jp/toukei/saikin/hw/k-iryohi/23/" target="_blank" rel="noopener">厚生労働省「令和5年度 国民医療費の概況」</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/12119572/" target="_blank" rel="noopener">Int J Obes 2002（大崎研究）</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/25263836/" target="_blank" rel="noopener">Obes Res Clin Pract 2014</a>／<a href="https://pubmed.ncbi.nlm.nih.gov/21593294/" target="_blank" rel="noopener">Diabetes Care 2011</a></p>
   </div>
@@ -799,7 +817,7 @@
     <div class="note-grid" id="noteList"></div>
     <p style="text-align:center;margin-top:26px">
       <a href="https://note.com/ichariba_fasting" class="btn" target="_blank" rel="noopener">noteをもっと読む</a>
-      <a href="#yuimaaru" style="display:inline-block;margin-left:14px;font-weight:700">ゆいまーるプランについて →</a>
+      <a href="#yuimaaru" style="display:inline-block;margin-left:14px;font-weight:700">ゆいまーる・覚悟プランについて →</a>
     </p>
   </div>
 </section>
@@ -816,22 +834,43 @@
       <div class="card">
         <h3>はじめてのファスティング講座</h3>
         <p>安全な進め方、準備期・回復期の食事、お薬との付き合い方を、薬剤師がわかりやすくお伝えします。</p>
-        <a href="https://note.com/ichariba_fasting/membership" class="card-link" target="_blank" rel="noopener">ゆいまーるプランで参加する →</a>
       </div>
       <div class="card">
         <h3>みんなで伴走サポート</h3>
         <p>ひとりだと続かない方へ。仲間と記録を見せ合いながら、決めた期間をやりぬくサポートです。</p>
-        <a href="https://note.com/ichariba_fasting/membership" class="card-link" target="_blank" rel="noopener">ゆいまーるプランで参加する →</a>
       </div>
     </div>
-    <div class="yuimaaru" id="yuimaaru">
+    <p class="course-lead">講座・サポートの最新情報は、2つのプランのメンバーに先行してお知らせします ↓</p>
+    <div class="yuimaaru" id="yuimaaru" style="margin-top:14px">
       <span class="tag">noteメンバーシップ</span>
-      <h3>ゆいまーるプラン</h3>
-      <p>「ゆいまーる」は沖縄の言葉で、助け合いのこと。<br>ひとりで抱えこまず、仲間と支え合いながらファスティングに向き合いたい方のためのプランです。</p>
-      <p style="margin-top:12px"><b>加入するメリット：</b>お互いの体重や食事を見える化して共有し、それをもとに薬剤師が一人ひとりに合った指導をおこないます。</p>
-      <p style="margin-top:12px"><b>プランの終わり：</b>目標体重を達成したら、その後は自分でセルフコントロールしていけるよう、プランは卒業（終了）となります。</p>
-      <a href="https://note.com/ichariba_fasting/membership" class="btn" target="_blank" rel="noopener">ゆいまーるプランに参加する</a>
-      <p class="small">※ noteのページに移動します。料金・内容はnoteでご確認ください。</p>
+      <h3>あなたに合うプランを選べます</h3>
+      <p>「ゆいまーる」は沖縄の言葉で、助け合いのこと。ひとりで抱えこまず、仲間と支え合いながら取り組めます。</p>
+      <div class="plans">
+        <div class="plan">
+          <p class="plan-for">仲間と記録を見せ合って続けたい方に</p>
+          <h4>ゆいまーるプラン</h4>
+          <p class="price">月<b>1,000</b>円</p>
+          <ul>
+            <li>掲示板で自分の記録を公開</li>
+            <li>記録に薬剤師目線のアドバイス</li>
+            <li>講座・サポートの先行案内</li>
+          </ul>
+          <a href="https://note.com/ichariba_fasting/membership" class="btn plan-btn" target="_blank" rel="noopener">ゆいまーるプランに参加する</a>
+        </div>
+        <div class="plan plan-kakugo" id="kakugo">
+          <span class="plan-badge">定員5名</span>
+          <p class="plan-for">個別に相談しながら、本気でやりぬきたい方に</p>
+          <h4>覚悟プラン</h4>
+          <p class="price">月<b>5,000</b>円</p>
+          <ul>
+            <li>ゆいまーるプランの内容すべて</li>
+            <li><b>月1回30分の個別オンラインレッスン</b></li>
+          </ul>
+          <a href="https://note.com/ichariba_fasting/membership" class="btn plan-btn" target="_blank" rel="noopener">覚悟プランに参加する</a>
+        </div>
+      </div>
+      <p class="plan-note"><b>プランの終わり：</b>目標体重を達成したら、その後は自分でセルフコントロールしていけるよう、プランは卒業（終了）となります。</p>
+      <p class="small">※ どちらのボタンもnoteのメンバーシップのページに移動します。ページ内で希望のプランを選んでください。料金・内容はnoteでご確認ください。</p>
     </div>
     <p style="text-align:center;margin-top:30px">
       <!-- お問い合わせ用のGoogleフォームのURLができたら、href="#" を書き換えてください -->
