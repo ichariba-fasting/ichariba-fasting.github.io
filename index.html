@@ -90,12 +90,13 @@
   @media(max-width:720px){.hero::before{background:rgba(4,46,70,.15)}}
   /* 明るい海の上でも読めるよう、文字に紺のふちどり */
   /* 紅型風：墨の輪郭線＋白いふち */
-  .hero h1{color:#2a5caa;--edge:#2b1d14;text-shadow:2px 0 0 var(--edge),-2px 0 0 var(--edge),0 2px 0 var(--edge),0 -2px 0 var(--edge),2px 2px 0 var(--edge),-2px 2px 0 var(--edge),2px -2px 0 var(--edge),-2px -2px 0 var(--edge),4px 0 0 #fff,-4px 0 0 #fff,0 4px 0 #fff,0 -4px 0 #fff,3px 3px 0 #fff,-3px 3px 0 #fff,3px -3px 0 #fff,-3px -3px 0 #fff,0 6px 16px rgba(4,45,62,.35)}
+  .hero h1{color:#d0352a;--edge:#2b1d14;text-shadow:2px 0 0 var(--edge),-2px 0 0 var(--edge),0 2px 0 var(--edge),0 -2px 0 var(--edge),2px 2px 0 var(--edge),-2px 2px 0 var(--edge),2px -2px 0 var(--edge),-2px -2px 0 var(--edge),4px 0 0 #fff,-4px 0 0 #fff,0 4px 0 #fff,0 -4px 0 #fff,3px 3px 0 #fff,-3px 3px 0 #fff,3px -3px 0 #fff,-3px -3px 0 #fff,0 6px 16px rgba(4,45,62,.35)}
   .hero h1 rt{color:#fff;text-shadow:0 0 3px #0b3550,0 0 3px #0b3550}
   /* 「行逢りば、兄弟。」を一文字ずつカラフルに */
-  /* 紅型の色：黄・朱・藍・緑・紫・桃・水色 */
-  .iro1{color:#f4b81c}.iro2{color:#e04a2f}.iro3{color:#2a5caa}.iro4{color:#3e9a4b}.iro5{color:#8a4fa3}.iro6{color:#e8729a}.iro7{color:#3fa9d6}
-  .hero p.lead{display:inline-block;background:rgba(6,62,84,.55);padding:12px 18px;border-radius:14px;text-shadow:none}
+  /* 説明文：紅型風（黄の地・墨の線・上に紅型の色の帯・朱の影） */
+  .hero p.lead,.hero p.lead[class]{display:inline-block;color:#2b1d14;font-weight:700;text-shadow:none;
+    background:linear-gradient(90deg,#d0352a 0 20%,#f4b81c 20% 40%,#2a5caa 40% 60%,#3e9a4b 60% 80%,#8a4fa3 80%) 0 0/100% 7px no-repeat,#fbe7a8;
+    border:2px solid #2b1d14;border-radius:6px;padding:16px 20px 12px;box-shadow:5px 5px 0 #d0352a}
   .hero .wrap > .hero-text > a:not(.btn){text-shadow:0 1px 6px rgba(4,45,62,.9)}
   .hero h1 span{display:inline-block}
   .hero h1 rt{font-size:.32em;letter-spacing:.08em;font-weight:700}
@@ -367,7 +368,7 @@
   .cost-src,.bg-aka > .wrap > .note{background:rgba(0,0,0,.22);border-radius:10px;padding:8px 12px;color:#fff}
   @media(max-width:720px){
     .bg-ki,.bg-midori,.bg-aka{background-image:none}
-    .hero p.lead{background:rgba(6,62,84,.6);padding:10px 14px;border-radius:12px;text-shadow:none}
+    .hero p.lead{padding:14px 14px 10px;font-size:14px}
     .sec-head p,.bg-ki .sec-head p,.bg-midori .sec-head p,.bg-aka .sec-head p,.sub-head p,.course-lead{border-radius:12px;font-size:14px}
   }
 
@@ -427,7 +428,7 @@
   <div class="wrap">
    <div class="hero-text">
     <span class="eyebrow">薬剤師が伴走する、沖縄発のファスティング</span>
-    <h1><span><ruby><span class="iro1">行</span><span class="iro2">逢</span><rt>いちゃ</rt></ruby><span class="iro3">り</span><span class="iro4">ば</span>、</span><span><ruby><span class="iro5">兄</span><span class="iro6">弟</span><rt>ちょーでー</rt></ruby>。</span><br><span><span class="iro1">ゆ</span><span class="iro2">い</span><span class="iro3">ま</span><span class="iro4">ー</span><span class="iro5">る</span><span class="iro6">で</span>、</span><span><span class="iro7">や</span><span class="iro1">り</span><span class="iro2">抜</span><span class="iro3">く</span>。</span></h1>
+    <h1><span><ruby>行逢<rt>いちゃ</rt></ruby>りば、</span><span><ruby>兄弟<rt>ちょーでー</rt></ruby>。</span><br><span>ゆいまーるで、</span><span>やり抜く。</span></h1>
     <p class="lead">出会えば、みな兄弟。ひとりで抱えこまなくていい。<br>仲間と記録を見せ合い、薬剤師が一人ひとりに合わせてサポートします。<br>沖縄の知恵と正しい知識で、無理なく、着実に。</p>
     <a href="#yuimaaru" class="btn">ゆいまーる・覚悟プランを見る</a>
     <a href="#about" style="display:inline-block;margin-left:16px;color:#fff;font-weight:700">ファスティング（断食）とは →</a>
