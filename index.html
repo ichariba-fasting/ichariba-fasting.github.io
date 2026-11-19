@@ -358,6 +358,14 @@
   .bg-midori .herb-intro b{color:var(--ki)}
   .bg-aka > .wrap > .note,.bg-aka > .wrap > .note a{color:#fff}
   .bg-ki .card,.bg-ki .note-card{box-shadow:0 6px 20px rgba(90,60,0,.12)}
+  /* 各コーナーの背景写真（コーナーの色を薄く重ねて、文字を読みやすく） */
+  section.photo{background-size:cover;background-position:center;background-repeat:no-repeat}
+  section.photo.bg-ki{background-image:linear-gradient(rgba(243,193,47,.74),rgba(243,193,47,.74)),var(--ph)}
+  section.photo.bg-midori{background-image:linear-gradient(rgba(16,96,60,.74),rgba(16,96,60,.74)),var(--ph)}
+  section.photo.bg-aka{background-image:linear-gradient(rgba(200,60,48,.72),rgba(200,60,48,.72)),var(--ph)}
+  section.photo.bg-shiro{background-image:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)),var(--ph)}
+  section.photo .sec-head h2{text-shadow:0 1px 0 rgba(255,255,255,.35)}
+  section.photo.bg-midori .sec-head h2,section.photo.bg-aka .sec-head h2{text-shadow:0 2px 8px rgba(0,0,0,.35)}
 
   /* 説明文を背景に負けないように（とくにスマホ） */
   .sec-head p,.bg-ki .sec-head p,.bg-midori .sec-head p,.bg-aka .sec-head p,.sub-head p,.course-lead{
@@ -450,7 +458,7 @@
 <div class="minsa"></div>
 
 <!-- ファスティングとは -->
-<section id="about" class="bg-ki">
+<section id="about" class="bg-ki photo" style="--ph:url(sec-about.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">ABOUT</span>
@@ -478,7 +486,7 @@
 </section>
 
 <!-- 断食の歴史 -->
-<section id="history" class="bg-ki" style="padding-top:0">
+<section id="history" class="bg-ki photo" style="--ph:url(sec-history.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">HISTORY</span>
@@ -513,7 +521,7 @@
 </section>
 
 <!-- やり方 -->
-<section id="howto" class="bg-midori">
+<section id="howto" class="bg-midori photo" style="--ph:url(sec-howto.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">HOW TO</span>
@@ -567,7 +575,7 @@
 </section>
 
 <!-- 研究 -->
-<section id="research" class="research bg-shiro">
+<section id="research" class="research bg-shiro photo" style="--ph:url(sec-research.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">RESEARCH</span>
@@ -603,7 +611,7 @@
 </section>
 
 <!-- 沖縄の薬草（キャラクター図鑑） -->
-<section id="herb" class="herb bg-ki">
+<section id="herb" class="herb bg-ki photo" style="--ph:url(sec-herb.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">OKINAWAN HERBS</span>
@@ -848,7 +856,7 @@
 </section>
 
 <!-- 体重と体の痛み（根拠＋わたしの体験） -->
-<section id="story" class="bg-aka">
+<section id="story" class="bg-aka photo" style="--ph:url(sec-story.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">BODY &amp; PAIN</span>
@@ -890,7 +898,7 @@
 </section>
 
 <!-- 肥満改善と医療費削減 -->
-<section id="cost" class="bg-midori">
+<section id="cost" class="bg-midori photo" style="--ph:url(sec-cost.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">HEALTH &amp; COST</span>
@@ -938,7 +946,7 @@
 </section>
 
 <!-- noteの記事（notes.json から自動で表示） -->
-<section id="note" class="bg-ki">
+<section id="note" class="bg-ki photo" style="--ph:url(sec-note.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">NOTE</span>
@@ -954,7 +962,7 @@
 </section>
 
 <!-- 講座 -->
-<section id="course" class="bg-midori">
+<section id="course" class="bg-midori photo" style="--ph:url(sec-course.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">SUPPORT</span>
@@ -1014,7 +1022,7 @@
 <div class="minsa"></div>
 
 <!-- プロフィール -->
-<section id="profile" class="bg-ki">
+<section id="profile" class="bg-ki photo" style="--ph:url(sec-profile.jpg)">
   <div class="wrap">
     <div class="sec-head">
       <span class="en">PROFILE</span>
@@ -1082,6 +1090,7 @@
     <p class="disc"><strong>ご注意：</strong>本サイトの体重記録は個人の経過であり、効果を保証するものではありません。掲載している医療情報は一般的な内容で、個別の診断・治療に代わるものではありません。ファスティングを行う際は、ご自身の体調に合わせ、必要に応じて医師・薬剤師にご相談ください。</p>
     <p style="margin-bottom:6px">当サイトでは、アクセス状況の把握のためGoogleアナリティクスを利用しています。</p>
     <p style="margin-bottom:6px">トップ写真：古宇利ビーチ（<a href="https://unsplash.com/photos/a-sandy-beach-with-clear-blue-water-and-a-bridge-in-the-distance--lH8Ihr8qms" target="_blank" rel="noopener" style="color:inherit">Unsplash</a>）／月桃 David Clode（<a href="https://unsplash.com/photos/a-close-up-of-a-flower-with-a-black-background-XYng6S1Ky30" target="_blank" rel="noopener" style="color:inherit">Unsplash</a>）／ウコン Jonas Kakaroto Honorato（<a href="https://commons.wikimedia.org/wiki/File:Turmeric_Flower_Curcuma_Longa_(243825849).jpeg" target="_blank" rel="noopener" style="color:inherit">CC0</a>）／長命草 M108t（<a href="https://commons.wikimedia.org/wiki/File:Compound_umbel_of_Peucedanum_japonicum_in_Ishigaki,_Okinawa.jpg" target="_blank" rel="noopener" style="color:inherit">CC BY 4.0</a>）／ゴーヤー Fahim Shahriyar Rifat（<a href="https://commons.wikimedia.org/wiki/File:Momordica_charantia_(flower).jpg" target="_blank" rel="noopener" style="color:inherit">CC BY-SA 4.0</a>）／フーチバー（ヨモギ属の花）Krzysztof Ziarnek, Kenraiz（<a href="https://commons.wikimedia.org/wiki/File:Artemisia_vulgaris_kz08.jpg" target="_blank" rel="noopener" style="color:inherit">CC BY-SA 4.0</a>）／グァバ Joydeep（<a href="https://commons.wikimedia.org/wiki/File:Psidium_guajava_flower_26032014_01.jpg" target="_blank" rel="noopener" style="color:inherit">CC BY-SA 3.0</a>）／桑 Suyash Dwivedi（<a href="https://commons.wikimedia.org/wiki/File:Morus_alba_flowers_in_India.jpg" target="_blank" rel="noopener" style="color:inherit">CC BY-SA 4.0</a>）。花の写真は丸く切り抜いています。</p>
+    <p style="margin-bottom:6px">各コーナーの背景写真：<a href="https://unsplash.com/" target="_blank" rel="noopener" style="color:inherit">Unsplash</a>（Unsplash License）</p>
     <p>© 2026 ゆいまーるファスティング</p>
   </div>
 </footer>
