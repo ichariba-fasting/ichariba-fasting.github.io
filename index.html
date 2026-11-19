@@ -75,9 +75,18 @@
 
   /* ヒーロー */
   /* 沖縄の薬草（ゴーヤー棚・月桃・ウコン・長命草・フーチバー・グァバ・桑） */
-  .hero{background:#000 url(hero-herb.jpg?v=3) right max(4vw,calc(50% - 600px)) center/auto 112% no-repeat;color:#fff;position:relative;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 55%);pointer-events:none}
-  @media(max-width:720px){.hero{background-position:right -40px center;background-size:auto 100%}.hero::before{background:rgba(0,0,0,.45)}}
+  .hero{background:#0a0f0b;color:#fff;position:relative;overflow:hidden}
+  /* 沖縄の植物の写真コラージュ（右側） */
+  .hero-photos{position:absolute;top:0;bottom:0;right:0;width:52%;display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:4px;z-index:0}
+  .hero-photos figure{position:relative;margin:0;overflow:hidden}
+  .hero-photos figure:first-child{grid-row:1 / 4}
+  .hero-photos img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-photos figcaption{position:absolute;right:8px;bottom:8px;font-size:12px;font-weight:700;background:rgba(0,0,0,.5);color:#fff;padding:1px 10px;border-radius:999px}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0a0f0b 0%,#0a0f0b 46%,rgba(10,15,11,.55) 56%,rgba(10,15,11,0) 68%);pointer-events:none}
+  .hero .wrap{z-index:2}
+  .hero .wave{z-index:2}
+  @media(min-width:721px){.hero-photos{width:46%}}
+  @media(max-width:720px){.hero-photos{width:100%}.hero-photos figcaption{display:none}.hero::before{background:rgba(10,15,11,.62)}}
   .hero h1,.hero p.lead{text-shadow:0 2px 10px rgba(4,45,62,.55)}
   .hero h1 span{display:inline-block}
   .hero h1 rt{font-size:.32em;letter-spacing:.08em;font-weight:700;color:#fff7ea}
@@ -406,6 +415,12 @@
 </nav>
 
 <header class="hero" id="top">
+  <div class="hero-photos" aria-hidden="true">
+    <figure><img src="photo-gettou-flower.jpg" alt=""><figcaption>月桃の花</figcaption></figure>
+    <figure><img src="photo-hibiscus-red.jpg" alt=""><figcaption>ハイビスカス</figcaption></figure>
+    <figure><img src="photo-gettou-leaf.jpg" alt=""><figcaption>月桃の葉</figcaption></figure>
+    <figure><img src="photo-hibiscus-pink.jpg" alt=""><figcaption>ハイビスカス</figcaption></figure>
+  </div>
   <div class="wrap">
    <div class="hero-text">
     <span class="eyebrow">薬剤師が伴走する、沖縄発のファスティング</span>
@@ -1053,7 +1068,7 @@
   <div class="wrap">
     <p class="disc"><strong>ご注意：</strong>本サイトの体重記録は個人の経過であり、効果を保証するものではありません。掲載している医療情報は一般的な内容で、個別の診断・治療に代わるものではありません。ファスティングを行う際は、ご自身の体調に合わせ、必要に応じて医師・薬剤師にご相談ください。</p>
     <p style="margin-bottom:6px">当サイトでは、アクセス状況の把握のためGoogleアナリティクスを利用しています。</p>
-    <p style="margin-bottom:6px">トップ写真：月桃の花（<a href="https://unsplash.com/photos/a-close-up-of-a-flower-with-a-black-background-XYng6S1Ky30" target="_blank" rel="noopener" style="color:inherit">Unsplash</a>）</p>
+    <p style="margin-bottom:6px">トップ写真：月桃の花（<a href="https://unsplash.com/photos/a-close-up-of-a-flower-with-a-black-background-XYng6S1Ky30" target="_blank" rel="noopener" style="color:inherit">Unsplash</a>）／月桃の葉 © Forest &amp; Kim Starr（<a href="https://commons.wikimedia.org/wiki/File:Starr-110209-0726-Alpinia_zerumbet-leaves-Resort_Management_Group_Nursery_Kihei-Maui_(24447604213).jpg" target="_blank" rel="noopener" style="color:inherit">CC BY 3.0</a>）／ハイビスカス・沖縄（<a href="https://commons.wikimedia.org/wiki/File:Hibiscus_on_way_to_Moon_Beach.jpg" target="_blank" rel="noopener" style="color:inherit">Wikimedia Commons</a>）</p>
     <p>© 2026 ゆいまーるファスティング</p>
   </div>
 </footer>
