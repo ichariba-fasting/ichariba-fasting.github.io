@@ -1023,6 +1023,13 @@
       <div class="stat"><div class="label">目標まであと</div><div class="num" id="sLeft">-<small>kg</small></div></div>
     </div>
 
+    <div class="stats">
+      <div class="stat"><div class="label">身長</div><div class="num" id="sHeight">-<small>cm</small></div></div>
+      <div class="stat"><div class="label">BMI（スタート）</div><div class="num" id="bStart">-</div></div>
+      <div class="stat hl"><div class="label">BMI（現在）</div><div class="num" id="bNow">-</div></div>
+      <div class="stat"><div class="label">BMI（目標）</div><div class="num" id="bGoal">-</div></div>
+    </div>
+
     <div class="progress">
       <div class="meta"><span>目標達成率</span><strong id="pText">0%</strong></div>
       <div class="bar"><div class="fill" id="pFill"></div></div>
@@ -1052,6 +1059,7 @@ const NICKNAME = "SHOKO";   // 決まったら書き換え
 const START_DATE   = "10/11";         // スタートした日
 const START_WEIGHT = 64.0;            // スタート時の体重（kg）
 const GOAL_WEIGHT  = 54.0;           // 目標体重（kg）
+const HEIGHT_CM    = 153;            // 身長（cm）
 
 // 記録：["日付", 体重] を1行ずつ追加していきます（下はサンプルです）
 const RECORDS = [
@@ -1076,6 +1084,12 @@ document.getElementById("sStart").innerHTML = kg(START_WEIGHT);
 document.getElementById("sNow").innerHTML   = kg(now);
 document.getElementById("sLost").innerHTML  = (lost > 0 ? "−" : "") + kg(Math.abs(lost));
 document.getElementById("sLeft").innerHTML  = kg(left);
+
+const bmi = w => (w / ((HEIGHT_CM / 100) ** 2)).toFixed(1);
+document.getElementById("sHeight").innerHTML = HEIGHT_CM + "<small>cm</small>";
+document.getElementById("bStart").textContent = bmi(START_WEIGHT);
+document.getElementById("bNow").textContent   = bmi(now);
+document.getElementById("bGoal").textContent  = bmi(GOAL_WEIGHT);
 document.getElementById("pText").textContent = rate.toFixed(0) + "%";
 setTimeout(() => document.getElementById("pFill").style.width = rate + "%", 200);
 
