@@ -75,18 +75,19 @@
 
   /* ヒーロー */
   /* 沖縄の薬草（ゴーヤー棚・月桃・ウコン・長命草・フーチバー・グァバ・桑） */
-  .hero{background:#0a0f0b;color:#fff;position:relative;overflow:hidden}
-  /* 沖縄の植物の写真コラージュ（右側） */
-  .hero-photos{position:absolute;top:0;bottom:0;right:0;width:52%;display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:1fr 1fr 1fr;gap:4px;z-index:0}
-  .hero-photos figure{position:relative;margin:0;overflow:hidden}
-  .hero-photos figure:first-child{grid-row:1 / 4}
-  .hero-photos img{width:100%;height:100%;object-fit:cover;display:block}
-  .hero-photos figcaption{position:absolute;right:8px;bottom:8px;font-size:12px;font-weight:700;background:rgba(0,0,0,.5);color:#fff;padding:1px 10px;border-radius:999px}
-  .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0a0f0b 0%,#0a0f0b 46%,rgba(10,15,11,.55) 56%,rgba(10,15,11,0) 68%);pointer-events:none}
+  .hero{background:#0a86bf url(hero-sea.jpg) center 55%/cover no-repeat;color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(4,46,70,.72) 0%,rgba(4,46,70,.5) 50%,rgba(4,46,70,.15) 85%);pointer-events:none}
   .hero .wrap{z-index:2}
   .hero .wave{z-index:2}
-  @media(min-width:721px){.hero-photos{width:46%}}
-  @media(max-width:720px){.hero-photos{width:100%}.hero-photos figcaption{display:none}.hero::before{background:rgba(10,15,11,.62)}}
+  /* サイトに載せている薬草の花（丸い写真） */
+  .hero-flowers{display:grid;grid-template-columns:repeat(2,120px);column-gap:18px;row-gap:6px;margin:0;padding:0;list-style:none}
+  .hero-flowers li{text-align:center;font-size:13px;font-weight:700;line-height:1.4;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+  .hero-flowers li:nth-child(even){transform:translateY(64px)}
+  .hero-flowers img{display:block;width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,.3);margin:0 auto 4px}
+  @media(min-width:1200px){.hero-flowers{position:absolute;right:calc((100vw - 100%) / -2 + 28px);top:50%;transform:translateY(-58%)}}
+  @media(max-width:720px){.hero-flowers{grid-template-columns:repeat(4,1fr) !important;max-width:520px !important}}
+  @media(max-width:1199px){.hero-flowers{order:5;grid-template-columns:repeat(7,1fr);column-gap:10px;row-gap:12px;width:100%;max-width:820px}.hero-flowers li:nth-child(even){transform:none}.hero-flowers img{width:100%;height:auto;aspect-ratio:1;border-width:3px}.hero-flowers li{font-size:11.5px}}
+  @media(max-width:720px){.hero::before{background:linear-gradient(180deg,rgba(4,46,70,.62) 0%,rgba(4,46,70,.5) 100%)}}
   .hero h1,.hero p.lead{text-shadow:0 2px 10px rgba(4,45,62,.55)}
   .hero h1 span{display:inline-block}
   .hero h1 rt{font-size:.32em;letter-spacing:.08em;font-weight:700;color:#fff7ea}
@@ -415,12 +416,6 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="hero-photos" aria-hidden="true">
-    <figure><img src="photo-gettou-flower.jpg" alt=""><figcaption>月桃の花</figcaption></figure>
-    <figure><img src="photo-hibiscus-red.jpg" alt=""><figcaption>ハイビスカス</figcaption></figure>
-    <figure><img src="photo-gettou-leaf.jpg" alt=""><figcaption>月桃の葉</figcaption></figure>
-    <figure><img src="photo-hibiscus-pink.jpg" alt=""><figcaption>ハイビスカス</figcaption></figure>
-  </div>
   <div class="wrap">
    <div class="hero-text">
     <span class="eyebrow">薬剤師が伴走する、沖縄発のファスティング</span>
@@ -430,6 +425,15 @@
     <a href="#about" style="display:inline-block;margin-left:16px;color:#fff;font-weight:700">ファスティング（断食）とは →</a>
    </div>
     <img class="hero-photo" src="profile.jpg" alt="薬剤師 SHOKO の写真">
+    <ul class="hero-flowers" aria-label="ぬちぐすい薬草図鑑の薬草の花">
+      <li><img src="flower-gettou.jpg" alt="">月桃</li>
+      <li><img src="flower-ukon.jpg" alt="">ウコン</li>
+      <li><img src="flower-chomeiso.jpg" alt="">長命草</li>
+      <li><img src="flower-goya.jpg" alt="">ゴーヤー</li>
+      <li><img src="flower-fuchiba.jpg" alt="">フーチバー</li>
+      <li><img src="flower-guava.jpg" alt="">グァバ</li>
+      <li><img src="flower-kuwa.jpg" alt="">桑</li>
+    </ul>
   </div>
   <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none"><path fill="#f3c12f" d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,70 L0,70 Z"/></svg>
 </header>
@@ -1068,7 +1072,7 @@
   <div class="wrap">
     <p class="disc"><strong>ご注意：</strong>本サイトの体重記録は個人の経過であり、効果を保証するものではありません。掲載している医療情報は一般的な内容で、個別の診断・治療に代わるものではありません。ファスティングを行う際は、ご自身の体調に合わせ、必要に応じて医師・薬剤師にご相談ください。</p>
     <p style="margin-bottom:6px">当サイトでは、アクセス状況の把握のためGoogleアナリティクスを利用しています。</p>
-    <p style="margin-bottom:6px">トップ写真：月桃の花（<a href="https://unsplash.com/photos/a-close-up-of-a-flower-with-a-black-background-XYng6S1Ky30" target="_blank" rel="noopener" style="color:inherit">Unsplash</a>）／月桃の葉 © Forest &amp; Kim Starr（<a href="https://commons.wikimedia.org/wiki/File:Starr-110209-0726-Alpinia_zerumbet-leaves-Resort_Management_Group_Nursery_Kihei-Maui_(24447604213).jpg" target="_blank" rel="noopener" style="color:inherit">CC BY 3.0</a>）／ハイビスカス・沖縄（<a href="https://commons.wikimedia.org/wiki/File:Hibiscus_on_way_to_Moon_Beach.jpg" target="_blank" rel="noopener" style="color:inherit">Wikimedia Commons</a>）</p>
+    <p style="margin-bottom:6px">トップ写真：古宇利ビーチ（<a href="https://unsplash.com/photos/a-sandy-beach-with-clear-blue-water-and-a-bridge-in-the-distance--lH8Ihr8qms" target="_blank" rel="noopener" style="color:inherit">Unsplash</a>）／月桃 David Clode（<a href="https://unsplash.com/photos/a-close-up-of-a-flower-with-a-black-background-XYng6S1Ky30" target="_blank" rel="noopener" style="color:inherit">Unsplash</a>）／ウコン Jonas Kakaroto Honorato（<a href="https://commons.wikimedia.org/wiki/File:Turmeric_Flower_Curcuma_Longa_(243825849).jpeg" target="_blank" rel="noopener" style="color:inherit">CC0</a>）／長命草 M108t（<a href="https://commons.wikimedia.org/wiki/File:Compound_umbel_of_Peucedanum_japonicum_in_Ishigaki,_Okinawa.jpg" target="_blank" rel="noopener" style="color:inherit">CC BY 4.0</a>）／ゴーヤー Fahim Shahriyar Rifat（<a href="https://commons.wikimedia.org/wiki/File:Momordica_charantia_(flower).jpg" target="_blank" rel="noopener" style="color:inherit">CC BY-SA 4.0</a>）／フーチバー（ヨモギ属の花）Krzysztof Ziarnek, Kenraiz（<a href="https://commons.wikimedia.org/wiki/File:Artemisia_vulgaris_kz08.jpg" target="_blank" rel="noopener" style="color:inherit">CC BY-SA 4.0</a>）／グァバ Joydeep（<a href="https://commons.wikimedia.org/wiki/File:Psidium_guajava_flower_26032014_01.jpg" target="_blank" rel="noopener" style="color:inherit">CC BY-SA 3.0</a>）／桑 Suyash Dwivedi（<a href="https://commons.wikimedia.org/wiki/File:Morus_alba_flowers_in_India.jpg" target="_blank" rel="noopener" style="color:inherit">CC BY-SA 4.0</a>）。花の写真は丸く切り抜いています。</p>
     <p>© 2026 ゆいまーるファスティング</p>
   </div>
 </footer>
