@@ -405,14 +405,14 @@
   /* ===== 動き ===== */
   @media(prefers-reduced-motion:no-preference){
     /* トップ：見出しが一つずつ浮かび上がる */
-    .hero h1 > span,.hero .eyebrow,.hero .lead,.hero-text > a{opacity:0;animation:fadeUp .8s ease forwards}
+    .hero h1 > span,.hero .eyebrow,.hero .lead,.hero-actions{opacity:0;animation:fadeUp .8s ease forwards}
     .hero .eyebrow{animation-delay:.1s}
     .hero h1 > span:nth-of-type(1){animation-delay:.3s}
     .hero h1 > span:nth-of-type(2){animation-delay:.55s}
     .hero h1 > span:nth-of-type(3){animation-delay:.9s}
     .hero h1 > span:nth-of-type(4){animation-delay:1.15s}
     .hero .lead{animation-delay:1.4s}
-    .hero-text > a{animation-delay:1.6s}
+    .hero-actions{animation-delay:1.6s}
     .hero-photo{animation:popIn .7s cubic-bezier(.34,1.56,.64,1) both}
     /* 薬草の花：ぽんっと出て、ふわふわ揺れる */
     .hero-flowers img{animation:popIn .6s cubic-bezier(.34,1.56,.64,1) both,float 4s ease-in-out 1.5s infinite}
@@ -427,7 +427,7 @@
     /* ミンサー柄の帯がゆっくり流れる */
     .minsa{animation:minsa 12s linear infinite}
     /* ボタンがときどき「こっちだよ」と弾む */
-    .hero .btn{animation:fadeUp .8s ease 1.6s forwards,nudge 3.5s ease-in-out 3s infinite}
+    .hero .btn-main{animation:nudge 3.5s ease-in-out 3s infinite}
     /* 12時間の矢印が流れる */
     .ippo-time .mid{animation:sway 2.4s ease-in-out infinite}
     /* スクロールで、ふわっと表示 */
@@ -485,6 +485,21 @@
   @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
   @keyframes sayPop{from{opacity:0;transform:scale(.5) translateY(-6px)}to{opacity:1;transform:none}}
   @keyframes sayBounce{0%,100%{transform:scale(1)}40%{transform:scale(1.08) rotate(-2deg)}70%{transform:scale(.97) rotate(1deg)}}
+  /* トップのボタン */
+  .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:30px}
+  .hero-actions .btn{margin-top:0}
+  .hero-actions .btn-sub{background:#fff;color:var(--aka);box-shadow:inset 0 0 0 2px var(--aka)}
+  .hero-link{font-weight:700;color:var(--umi-deep)}
+  @media(max-width:520px){.hero-actions .btn{flex:1 1 100%;text-align:center}}
+  /* 1分でわかるファスティング */
+  .ichibun .card{position:relative;display:flex;flex-direction:column;padding-top:30px}
+  .ichibun .num{position:absolute;top:-16px;left:20px;width:36px;height:36px;border-radius:50%;background:var(--midori);color:#fff;font-family:"Zen Maru Gothic",sans-serif;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px var(--ki)}
+  .ichibun .card:nth-child(2) .num{background:var(--aka)}
+  .ichibun .card:nth-child(3) .num{background:var(--umi)}
+  .ichibun .card p{flex:1}
+  .ichibun .more{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 14px}
+  .ichibun .more a{font-weight:700;font-size:14px;color:var(--aka);text-decoration:none;border-bottom:2px solid var(--kiiro)}
+  .ichibun .cards{margin-top:10px}
 </style>
 </head>
 <body>
@@ -496,6 +511,7 @@
   </div>
   <div class="nav-menu">
     <ul>
+      <li><a href="#ichibun">1分でわかる</a></li>
       <li><a href="#ippo">まずは今夜から</a></li>
       <li><a href="#about">ファスティング（断食）とは</a></li>
       <li><a href="#history">断食の歴史</a></li>
@@ -519,8 +535,11 @@
     <span class="eyebrow">薬剤師が伴走する、沖縄発のファスティング</span>
     <h1><span><ruby>行逢<rt>いちゃ</rt></ruby>りば、</span><span><ruby>兄弟<rt>ちょーでー</rt></ruby>。</span><br><span><span class="aka">ゆいまーる</span>で、</span><span>一歩ずつ。</span></h1>
     <p class="lead">出会えば、みな兄弟。ひとりで抱えこまなくていい。<br>仲間と記録を見せ合い、薬剤師が一人ひとりに合わせてサポートします。<br>沖縄の知恵と正しい知識で、無理なく、着実に。</p>
-    <a href="#course" class="btn">講座・サポートを見る</a>
-    <a href="#about" style="display:inline-block;margin-left:16px;font-weight:700">ファスティング（断食）とは →</a>
+    <div class="hero-actions">
+      <a href="#ippo" class="btn btn-main">まずは今夜からやってみる</a>
+      <a href="#course" class="btn btn-sub">講座・サポートを見る</a>
+      <a href="#ichibun" class="hero-link">1分でわかるファスティング →</a>
+    </div>
    </div>
     <img class="hero-photo" src="profile.jpg" alt="薬剤師 SHOKO の写真">
     <ul class="hero-flowers" aria-label="ぬちぐすい薬草図鑑の薬草の花">
@@ -536,6 +555,37 @@
 </header>
 
 <div class="minsa"></div>
+
+<!-- 1分でわかるファスティング -->
+<section id="ichibun" class="ichibun bg-ki">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">IN 1 MINUTE</span>
+      <h2>1分でわかるファスティング</h2>
+      <p>はじめての方は、まずここから</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="num">1</span>
+        <h3>どんなもの？</h3>
+        <p>決めた時間だけ食事を休んで、胃腸と食習慣をととのえる方法です。「食べない」ではなく「整える」時間です。</p>
+        <div class="more"><a href="#about">ファスティングとは →</a><a href="#history">断食の歴史 →</a></div>
+      </div>
+      <div class="card">
+        <span class="num">2</span>
+        <h3>何から始める？</h3>
+        <p>いきなり何日も食べないのではなく、まずは「夜の12時間」から。慣れてきたら、3日間のプログラムへ。</p>
+        <div class="more"><a href="#ippo">まずは今夜から →</a><a href="#howto">3日間のやり方 →</a></div>
+      </div>
+      <div class="card">
+        <span class="num">3</span>
+        <h3>気をつけることは？</h3>
+        <p>お薬を飲んでいる方、持病のある方、妊娠中・授乳中の方は、始める前に医師・薬剤師に相談を。体調が悪いときはすぐ中止します。</p>
+        <div class="more"><a href="#howto">確認事項 →</a><a href="#faq">よくある質問 →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- まずは今夜から＋島の断食ごよみ -->
 <section id="ippo" class="goyomi bg-ki">
