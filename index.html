@@ -36,7 +36,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;scroll-padding-top:100px}
-  body{font-family:"Zen Maru Gothic",sans-serif;color:var(--sumi);background:#fff;line-height:1.9;font-size:16px}
+  body{font-family:"Zen Maru Gothic",sans-serif;color:var(--sumi);background:var(--ki);line-height:1.9;font-size:16px}
   h1,h2,h3,.mincho{font-family:"Zen Maru Gothic",sans-serif}
   a{color:var(--umi)}
   .wrap{max-width:960px;margin:0 auto;padding:0 20px}
@@ -80,7 +80,7 @@
 
   /* ヒーロー */
   /* 沖縄の薬草（ゴーヤー棚・月桃・ウコン・長命草・フーチバー・グァバ・桑） */
-  .hero{background:#fff;color:var(--sumi);position:relative;overflow:hidden}
+  .hero{background:var(--ki);color:var(--sumi);position:relative;overflow:hidden}
   .hero .wrap{z-index:2}
   /* サイトに載せている薬草の花（丸い写真） */
   .hero-flowers{display:grid;grid-template-columns:repeat(2,120px);column-gap:18px;row-gap:6px;margin:0;padding:0;list-style:none}
@@ -92,16 +92,16 @@
   @media(max-width:1199px){.hero-flowers{order:5;grid-template-columns:repeat(7,1fr);column-gap:10px;row-gap:12px;width:100%;max-width:820px}.hero-flowers li:nth-child(even){transform:none}.hero-flowers img{width:100%;height:auto;aspect-ratio:1;border-width:3px}.hero-flowers li{font-size:11.5px}}
   /* キャッチコピーと説明文（白い背景） */
   .hero h1{color:var(--umi-deep)}
-  .hero h1 rt{color:var(--hai)}
+  .hero h1 rt{color:#4a3d0c}
   .hero p.lead{color:var(--sumi)}
   .hero h1 span{display:inline-block}
   .hero h1 rt{font-size:.32em;letter-spacing:.08em;font-weight:700}
   .hero p.lead{word-break:auto-phrase}
   .hero .wrap{padding:50px 20px 70px;position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
   .hero-text{min-width:0;max-width:100%}
-  .hero-photo{order:-1;display:block;width:140px;aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 0 0 3px var(--kiiro)}
+  .hero-photo{order:-1;display:block;width:140px;aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 0 0 4px #fff}
   @media(max-width:720px){.hero .wrap{padding-top:40px}.hero-photo{width:120px}}
-  .hero .eyebrow{display:inline-block;background:#ffe07a;color:#0d3b4f;font-weight:800;border-radius:999px;padding:5px 18px;font-size:clamp(14px,1.8vw,16px);letter-spacing:.08em;margin-bottom:22px}
+  .hero .eyebrow{display:inline-block;background:#fff;color:#0d3b4f;font-weight:800;border-radius:999px;padding:5px 18px;font-size:clamp(14px,1.8vw,16px);letter-spacing:.08em;margin-bottom:22px}
   .hero h1{font-size:clamp(34px,6vw,58px);line-height:1.3;letter-spacing:.04em;margin-bottom:18px}
   .hero h1 .aka{color:var(--sango)}
   .hero p.lead{font-size:clamp(15px,2.2vw,18px);max-width:640px}
@@ -321,23 +321,24 @@
   .herb-tips[open] summary{margin-bottom:8px}
   .herb-intro{margin-bottom:22px}
 
-  footer{background:#fff;border-top:1px solid #ececec;color:var(--hai);font-size:13px;padding:34px 0;text-align:center}
+  footer{background:var(--ki);border-top:1px solid rgba(0,0,0,.1);color:#4a3d0c;font-size:13px;padding:34px 0;text-align:center}
   footer .disc{max-width:720px;margin:0 auto 14px;text-align:left;line-height:1.8}
   footer strong{color:var(--sumi)}
-  /* ===== 背景は白で統一 ===== */
+  /* ===== 背景は濃い黄色で統一 ===== */
   :root{--ki:#f3c12f;--midori:#17744a;--midori-deep:#0d4a30;--aka:#d9483b}
-  .bg-ki,.bg-midori,.bg-aka,.bg-shiro{background:#fff}
-  section{border-top:1px solid #ececec}
+  .bg-ki,.bg-midori,.bg-aka,.bg-shiro{background:var(--ki)}
+  section{border-top:1px solid rgba(0,0,0,.1)}
   .research{position:relative;overflow:hidden}
   .research > .wrap{position:relative;z-index:1}
   .sec-head .en{color:var(--aka)}
   .sec-head h2{color:var(--midori-deep)}
-  .sec-head p,.sub-head p,.course-lead{color:var(--hai);font-weight:500}
+  .sec-head p,.sub-head p,.course-lead{color:#4a3d0c;font-weight:500}
   .course-lead{color:var(--sumi)}
-  /* 白い背景の上でも白いカードの形がわかるように */
-  .card,.step,.profile,.cost-stat,.cost-msg,.note-empty{box-shadow:0 0 0 1px #e6e6e6,0 4px 14px rgba(0,0,0,.04)}
-  .cost-src{color:var(--hai)}
-  .cost-src a{color:var(--hai)}
+  /* 黄色の上で白いカードが浮いて見えるように */
+  .card,.step,.profile,.cost-stat,.cost-msg,.note-empty{box-shadow:0 6px 18px rgba(90,60,0,.12)}
+  .cost-src{color:#4a3d0c}
+  .cost-src a{color:#4a3d0c}
+  section > .wrap > .note,section > .wrap > .note a{color:#4a3d0c}
 
   /* プロフィールをコンパクトに */
   .profile{grid-template-columns:150px 1fr;gap:24px;padding:24px 26px}
