@@ -366,6 +366,30 @@
   .chart-box .note{margin-top:4px}
   @media(max-width:720px){.stats{grid-template-columns:repeat(4,1fr);gap:6px}.stat .num{font-size:17px}.stat .label{font-size:11px}}
 
+  /* まずは今夜から＋島の断食ごよみ */
+  .ippo{background:#fff;border-radius:16px;padding:28px 26px;box-shadow:0 6px 18px rgba(90,60,0,.12);border-top:6px solid var(--aka)}
+  .ippo h3{font-size:clamp(20px,3vw,24px);color:var(--midori-deep);text-align:center}
+  .ippo-time{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:18px 0 14px}
+  .ippo-time .t{text-align:center;background:var(--suna);border-radius:12px;padding:10px 16px;min-width:120px}
+  .ippo-time .t b{display:block;font-family:"Zen Maru Gothic",sans-serif;font-size:26px;color:var(--umi-deep)}
+  .ippo-time .t span{font-size:13px;color:#4a4a4a}
+  .ippo-time .mid{font-family:"Zen Maru Gothic",sans-serif;font-weight:800;color:var(--aka);font-size:18px;text-align:center;line-height:1.3}
+  .ippo-time .mid small{display:block;font-size:12px;color:#4a4a4a;font-weight:500}
+  @media(max-width:520px){.ippo{padding:24px 16px}.ippo-time{gap:6px;flex-wrap:nowrap}.ippo-time .t{min-width:0;padding:8px 10px}.ippo-time .t b{font-size:22px}.ippo-time .mid{font-size:15px}}
+  .ippo-tips{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px;list-style:none;padding:0}
+  @media(max-width:820px){.ippo-tips{grid-template-columns:1fr}}
+  .ippo-tips li{background:var(--suna);border-radius:10px;padding:12px 14px;font-size:15px}
+  .ippo-tips li b{display:block;color:var(--midori-deep)}
+  .ippo-note{font-size:13px;color:#4a4a4a;margin-top:14px;text-align:center}
+  .goyomi .sub-head{margin:44px 0 20px}
+  .goyomi-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:720px){.goyomi-cards{grid-template-columns:1fr}}
+  .goyomi-cards .card{border-top-color:var(--midori)}
+  .goyomi-cards .card:nth-child(2){border-top-color:var(--aka)}
+  .goyomi-cards .card:nth-child(3){border-top-color:var(--umi)}
+  .goyomi-cards .card:nth-child(4){border-top-color:var(--kiiro)}
+  .goyomi-cards .card h3{font-size:19px}
+  .goyomi-cards .card a{font-weight:700;font-size:14px}
 </style>
 </head>
 <body>
@@ -377,6 +401,7 @@
   </div>
   <div class="nav-menu">
     <ul>
+      <li><a href="#ippo">まずは今夜から</a></li>
       <li><a href="#about">ファスティング（断食）とは</a></li>
       <li><a href="#history">断食の歴史</a></li>
       <li><a href="#howto">やり方・注意点</a></li>
@@ -415,6 +440,61 @@
 </header>
 
 <div class="minsa"></div>
+
+<!-- まずは今夜から＋島の断食ごよみ -->
+<section id="ippo" class="goyomi bg-ki">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">FIRST STEP</span>
+      <h2>まずは今夜から、12時間</h2>
+      <p>断食は、特別な修行ではなく「胃を休める」小さな習慣から</p>
+    </div>
+    <div class="ippo">
+      <h3>夕ごはんを早めに終えて、朝まで食べない</h3>
+      <div class="ippo-time">
+        <div class="t"><b>20:00</b><span>夕ごはん おわり</span></div>
+        <div class="mid">→ 12時間 →<small>ねている間も<br>おなかは休憩中</small></div>
+        <div class="t"><b>8:00</b><span>朝ごはん</span></div>
+      </div>
+      <ul class="ippo-tips">
+        <li><b>夜の空腹には</b>白湯・炭酸水・ノンカフェインの薬草茶（グァバ茶・桑の葉茶など）</li>
+        <li><b>時間はずらしてOK</b>19時〜7時、21時〜9時など、暮らしに合わせて</li>
+        <li><b>できた日に○をつける</b>週に2〜3日からで十分。続けることがいちばん大切</li>
+      </ul>
+      <p class="ippo-note">持病がある・お薬を飲んでいる・妊娠中や授乳中の方は、始める前に<a href="#howto">確認事項</a>を見て、医師・薬剤師にご相談ください。</p>
+    </div>
+
+    <div class="sub-head">
+      <span class="en">ISLAND WISDOM</span>
+      <h3>島の断食ごよみ</h3>
+      <p>沖縄の暮らしの中にある「食べすぎない知恵」</p>
+    </div>
+    <div class="cards goyomi-cards">
+      <div class="card">
+        <span class="tag">腹八分（はらはちぶ）</span>
+        <h3>「もう少し食べたい」で箸をおく</h3>
+        <p>長寿の島のお年寄りが大切にしてきた食べ方。断食の前に、まずはいつもの一口を減らすことから。</p>
+      </div>
+      <div class="card">
+        <span class="tag">かちゅーゆ</span>
+        <h3>お腹がすいたら、かつお節のお湯</h3>
+        <p>かつお節に熱いお湯を注ぐだけ。だしの香りで気持ちが落ち着きます。血圧が気になる方は、みそやしょうゆを控えめに。</p>
+        <a href="https://note.com/ichariba_fasting/n/n6f89f28e904c" target="_blank" rel="noopener">noteで読む →</a>
+      </div>
+      <div class="card">
+        <span class="tag">没頭する時間</span>
+        <h3>三線・畑・散歩で、空腹を忘れる</h3>
+        <p>空腹は、手や体を動かしているうちに波のように過ぎていきます。夢中になれることを一つ用意しておくと楽に。</p>
+        <a href="https://note.com/ichariba_fasting/n/n3c94ecd7a4ac" target="_blank" rel="noopener">noteで読む →</a>
+      </div>
+      <div class="card">
+        <span class="tag">行事のあと</span>
+        <h3>ごちそうの次の日は、胃をやすめる日</h3>
+        <p>お正月・シーミー・旧盆など、ごちそうが続いたあとは、おかゆや汁ものの軽い食事に。ゆるやかな「島のリセット」です。</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ファスティングとは -->
 <section id="about" class="bg-ki">
