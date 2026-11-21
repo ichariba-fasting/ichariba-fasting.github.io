@@ -390,6 +390,18 @@
   .goyomi-cards .card:nth-child(4){border-top-color:var(--kiiro)}
   .goyomi-cards .card h3{font-size:19px}
   .goyomi-cards .card a{font-weight:700;font-size:14px}
+  /* よくある質問 */
+  .faq{display:grid;gap:12px;max-width:820px;margin:0 auto}
+  .faq details{background:#fff;border-radius:14px;padding:16px 20px;box-shadow:0 6px 18px rgba(90,60,0,.12)}
+  .faq summary{cursor:pointer;list-style:none;font-weight:700;color:var(--midori-deep);font-size:17px;display:flex;gap:10px;align-items:flex-start}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::before{content:"Q";flex:none;width:28px;height:28px;border-radius:50%;background:var(--midori);color:#fff;font-family:"Zen Maru Gothic",sans-serif;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .faq summary::after{content:"＋";margin-left:auto;color:var(--aka);flex:none}
+  .faq details[open] summary::after{content:"−"}
+  .faq .a{display:flex;gap:10px;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+  .faq .a::before{content:"A";flex:none;width:28px;height:28px;border-radius:50%;background:var(--aka);color:#fff;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .faq .a p{margin:0}
+  .faq .a p + p{margin-top:6px}
 </style>
 </head>
 <body>
@@ -405,6 +417,7 @@
       <li><a href="#about">ファスティング（断食）とは</a></li>
       <li><a href="#history">断食の歴史</a></li>
       <li><a href="#howto">やり方・注意点</a></li>
+      <li><a href="#faq">よくある質問</a></li>
       <li><a href="#research">研究のいま</a></li>
       <li><a href="#herb">薬草図鑑</a></li>
       <li><a href="#story">痛みと体重</a></li>
@@ -610,6 +623,48 @@
     </div>
     <p class="course-cycle"><b>1か月を1クール</b>として、<b>3か月</b>くり返します。</p>
     <div class="alert">一般的な情報です。診断・治療に代わるものではありません。不安な方は医師・薬剤師にご相談ください。</div>
+  </div>
+</section>
+
+<!-- よくある質問 -->
+<section id="faq" class="bg-ki">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="en">Q&amp;A</span>
+      <h2>よくある質問</h2>
+      <p>はじめる前の「気になる」に、薬剤師がお答えします</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>お腹がすいて、夜眠れなくなりませんか？</summary>
+        <div class="a"><div><p>はじめの数日は空腹を感じやすいですが、空腹は波のようにやってきて、しばらくすると落ち着きます。白湯や炭酸水、かちゅーゆで乗り切る方が多いです。</p><p>どうしても眠れないほどつらい日は、無理をせず軽いものを少し食べてOK。睡眠を削ってまで続ける必要はありません。</p></div></div>
+      </details>
+      <details>
+        <summary>仕事や家事、育児をしながらでもできますか？</summary>
+        <div class="a"><div><p>「夜だけの12時間」なら、ほとんどが寝ている時間なので、ふだん通りに過ごせます。</p><p>液体だけで過ごす日は、予定の少ない日や休日に合わせるのがおすすめ。車の運転や力仕事、激しい運動が多い日は避けましょう。</p></div></div>
+      </details>
+      <details>
+        <summary>授乳中でもできますか？</summary>
+        <div class="a"><div><p>授乳中の断食の安全性は、研究でもまだわかっていません。液体だけで過ごす断食は避け、「腹八分」や「夜食をやめる」くらいから始めてください。</p><p>母乳の出や赤ちゃんの体重が気になるときはすぐにやめて、医師・助産師にご相談ください。</p></div></div>
+      </details>
+      <details>
+        <summary>お薬を飲んでいてもできますか？</summary>
+        <div class="a"><div><p>血糖値を下げるお薬は低血糖、血圧のお薬はふらつきが起こりやすくなることがあります。食事に合わせて飲むお薬は、量やタイミングの見直しが必要なことも。</p><p>自己判断でお薬をやめたり減らしたりせず、始める前に主治医・薬剤師にご相談ください。</p></div></div>
+      </details>
+      <details>
+        <summary>頭が痛くなったり、ふらふらしたら？</summary>
+        <div class="a"><div><p>水分不足や、コーヒー・お茶のカフェインが急に減ったことが原因のこともあります。まずは水分をしっかりとりましょう。</p><p>強いめまい・冷や汗・手のふるえ・動悸があるときはすぐに中止して、糖分のあるものをとってください。症状が続くときは受診を。</p></div></div>
+      </details>
+      <details>
+        <summary>終わったあと、リバウンドしませんか？</summary>
+        <div class="a"><div><p>断食のあとに急にたくさん食べると、体重は戻りやすくなります。だからこそ「回復期」でゆっくり食事を戻すことが大切です。</p><p>終わったあとも体重の記録を続けると、増えはじめに早く気づけます。仲間と記録を見せ合うのは、そのためでもあります。</p></div></div>
+      </details>
+      <details>
+        <summary>運動はしたほうがいいですか？</summary>
+        <div class="a"><div><p>液体だけで過ごす日は、散歩や軽いストレッチ程度に。ふだんの食事に戻ってから、少しずつ体を動かす量を増やしていきましょう。</p></div></div>
+      </details>
+    </div>
+    <p style="text-align:center;margin-top:18px;color:#4a3d0c;font-size:14px">ほかに気になることは、<a href="#course">お問い合わせ</a>からお気軽にどうぞ。</p>
   </div>
 </section>
 
