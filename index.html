@@ -449,6 +449,42 @@
   @keyframes nudge{0%,88%,100%{transform:translateY(0)}92%{transform:translateY(-6px)}96%{transform:translateY(0)}}
   @keyframes sway{0%,100%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
   @keyframes leaf{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+  /* ===== 薬草図鑑の動き ===== */
+  @media(prefers-reduced-motion:no-preference){
+    /* キャラクターがゆらゆら・ぴょこぴょこ（一人ずつリズムを変える） */
+    .chara svg{transform-origin:50% 90%;animation:bob 3.2s ease-in-out infinite}
+    .herb-card:nth-child(2n) .chara svg{animation-name:swing;animation-duration:3.8s}
+    .herb-card:nth-child(3n) .chara svg{animation-duration:2.8s}
+    .herb-card:nth-child(1) .chara svg{animation-delay:-.4s}
+    .herb-card:nth-child(2) .chara svg{animation-delay:-1.1s}
+    .herb-card:nth-child(3) .chara svg{animation-delay:-1.9s}
+    .herb-card:nth-child(4) .chara svg{animation-delay:-.7s}
+    .herb-card:nth-child(5) .chara svg{animation-delay:-2.3s}
+    .herb-card:nth-child(6) .chara svg{animation-delay:-1.5s}
+    .herb-card:nth-child(7) .chara svg{animation-delay:-.2s}
+    /* まばたき */
+    .chara svg circle[r="4.5"][fill="#2a2a2a"],.chara svg circle[r="1.5"][fill="#fff"]{transform-box:fill-box;transform-origin:center;animation:blink 4.6s infinite}
+    .herb-card:nth-child(2n) .chara svg circle{animation-delay:1.7s}
+    .herb-card:nth-child(3n) .chara svg circle{animation-delay:3.1s}
+    /* ふれる・タップすると、ぴょーんと跳ねて、ふきだしがはずむ */
+    .herb-card:hover .chara svg,.herb-card.poke .chara svg{animation:boing .7s ease}
+    .herb-card:hover .say,.herb-card.poke .say{animation:sayBounce .6s ease}
+    .chara{cursor:pointer;-webkit-tap-highlight-color:transparent}
+    .herb-card{transition:transform .25s ease,box-shadow .25s ease,opacity .7s ease}
+    .herb-card:hover,.js-anim .herb-card.reveal.is-in:hover{transform:translateY(-5px) rotate(-.6deg);box-shadow:0 14px 28px rgba(90,60,0,.2)}
+    .herb-card:nth-child(even):hover,.js-anim .herb-card.reveal.is-in:nth-child(even):hover{transform:translateY(-5px) rotate(.6deg)}
+    /* カードが出てきたら、少し遅れてふきだしがぽんっ */
+    .js-anim .herb-card.reveal .say{opacity:0}
+    .js-anim .herb-card.reveal.is-in .say{animation:sayPop .5s cubic-bezier(.34,1.56,.64,1) calc(var(--d,0s) + .45s) both}
+    .js-anim .herb-card.reveal.is-in:hover .say,.js-anim .herb-card.reveal.is-in.poke .say{opacity:1;animation:sayBounce .6s ease}
+    /* 「くわしく見る」を開いたら、ふわっと */
+    .herb-more[open] > :not(summary){animation:fadeUp .4s ease}
+  }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+  @keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+  @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+  @keyframes sayPop{from{opacity:0;transform:scale(.5) translateY(-6px)}to{opacity:1;transform:none}}
+  @keyframes sayBounce{0%,100%{transform:scale(1)}40%{transform:scale(1.08) rotate(-2deg)}70%{transform:scale(.97) rotate(1deg)}}
 </style>
 </head>
 <body>
@@ -1389,6 +1425,15 @@ setTimeout(() => document.getElementById("pFill").style.width = rate + "%", 200)
     })(start);
   }
 })();
+
+/* 薬草図鑑：キャラクターをタップすると跳ねる（スマホ用） */
+document.querySelectorAll(".herb-card .chara").forEach(c => c.addEventListener("click", () => {
+  const card = c.closest(".herb-card");
+  card.classList.remove("poke");
+  void card.offsetWidth; // アニメーションをもう一度動かすため
+  card.classList.add("poke");
+  setTimeout(() => card.classList.remove("poke"), 700);
+}));
 </script>
 </body>
 </html>
