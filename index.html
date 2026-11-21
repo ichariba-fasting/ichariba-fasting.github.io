@@ -402,6 +402,53 @@
   .faq .a::before{content:"A";flex:none;width:28px;height:28px;border-radius:50%;background:var(--aka);color:#fff;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
   .faq .a p{margin:0}
   .faq .a p + p{margin-top:6px}
+  /* ===== 動き ===== */
+  @media(prefers-reduced-motion:no-preference){
+    /* トップ：見出しが一つずつ浮かび上がる */
+    .hero h1 > span,.hero .eyebrow,.hero .lead,.hero-text > a{opacity:0;animation:fadeUp .8s ease forwards}
+    .hero .eyebrow{animation-delay:.1s}
+    .hero h1 > span:nth-of-type(1){animation-delay:.3s}
+    .hero h1 > span:nth-of-type(2){animation-delay:.55s}
+    .hero h1 > span:nth-of-type(3){animation-delay:.9s}
+    .hero h1 > span:nth-of-type(4){animation-delay:1.15s}
+    .hero .lead{animation-delay:1.4s}
+    .hero-text > a{animation-delay:1.6s}
+    .hero-photo{animation:popIn .7s cubic-bezier(.34,1.56,.64,1) both}
+    /* 薬草の花：ぽんっと出て、ふわふわ揺れる */
+    .hero-flowers img{animation:popIn .6s cubic-bezier(.34,1.56,.64,1) both,float 4s ease-in-out 1.5s infinite}
+    .hero-flowers li:nth-child(2) img{animation-delay:.15s,1.8s}
+    .hero-flowers li:nth-child(3) img{animation-delay:.3s,2.1s}
+    .hero-flowers li:nth-child(4) img{animation-delay:.45s,2.4s}
+    .hero-flowers li:nth-child(5) img{animation-delay:.6s,2.7s}
+    .hero-flowers li:nth-child(6) img{animation-delay:.75s,3s}
+    .hero-flowers li:nth-child(7) img{animation-delay:.9s,3.3s}
+    .hero-flowers img{transition:transform .3s}
+    .hero-flowers li:hover img{animation-play-state:paused;transform:scale(1.08) rotate(-4deg)}
+    /* ミンサー柄の帯がゆっくり流れる */
+    .minsa{animation:minsa 12s linear infinite}
+    /* ボタンがときどき「こっちだよ」と弾む */
+    .hero .btn{animation:fadeUp .8s ease 1.6s forwards,nudge 3.5s ease-in-out 3s infinite}
+    /* 12時間の矢印が流れる */
+    .ippo-time .mid{animation:sway 2.4s ease-in-out infinite}
+    /* スクロールで、ふわっと表示 */
+    .js-anim .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;transition-delay:var(--d,0s)}
+    .js-anim .reveal.is-in{opacity:1;transform:none}
+    /* カードにふれると少し浮く */
+    .card,.step,.faq details,.cost-stat,.ippo-tips li{transition:transform .25s ease,box-shadow .25s ease,opacity .7s ease}
+    .card:hover,.cost-stat:hover,.ippo-tips li:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(90,60,0,.18)}
+    .js-anim .card.reveal.is-in:hover,.js-anim .cost-stat.reveal.is-in:hover{transform:translateY(-4px)}
+    .faq details:hover{box-shadow:0 10px 22px rgba(90,60,0,.16)}
+    .faq details[open] .a{animation:fadeUp .4s ease}
+    /* 見出しの葉っぱがそよぐ */
+    .sec-head .en::before{animation:leaf 3s ease-in-out infinite;transform-origin:50% 100%}
+  }
+  @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes popIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  @keyframes minsa{from{background-position:0 0}to{background-position:292px 0}}
+  @keyframes nudge{0%,88%,100%{transform:translateY(0)}92%{transform:translateY(-6px)}96%{transform:translateY(0)}}
+  @keyframes sway{0%,100%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
+  @keyframes leaf{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
 </style>
 </head>
 <body>
@@ -1286,6 +1333,61 @@ setTimeout(() => document.getElementById("pFill").style.width = rate + "%", 200)
       ${n.thumbnail ? `<img src="${esc(n.thumbnail)}" alt="" loading="lazy">` : ""}
       <div class="body"><div class="date">${esc(n.date)}</div><h3>${esc(n.title)}</h3></div>
     </a>`).join("");
+})();
+
+/* 動き：スクロールでふわっと表示・数字のカウントアップ */
+(function(){
+  if (!window.matchMedia || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  document.documentElement.classList.add("js-anim");
+  const sel = ".sec-head,.sub-head,.card,.step,.ippo,.faq details,.herb-card,.cost-stat,.cost-msg,.profile,.sengen,.alert,.note-card,.course-cycle";
+  const els = document.querySelectorAll(sel);
+  els.forEach(el => {
+    el.classList.add("reveal");
+    // 横に並んだものは、少しずつ時間をずらす
+    const sibs = Array.from(el.parentElement.children).filter(c => c.matches(sel));
+    el.style.setProperty("--d", (Math.min(sibs.indexOf(el), 6) * 0.08) + "s");
+  });
+  // 画面に入ったものから表示（読み込み時・スクロール時・サイズ変更時にチェック）
+  let pending = Array.from(els);
+  function show(el){
+    el.classList.add("is-in");
+    if (el.classList.contains("cost-stat")) countUp(el.querySelector(".num"));
+  }
+  function check(){
+    const h = window.innerHeight;
+    const atBottom = h + window.scrollY >= document.documentElement.scrollHeight - 4;
+    pending = pending.filter(el => {
+      if (atBottom || el.getBoundingClientRect().top < h * 0.92) { show(el); return false; }
+      return true;
+    });
+  }
+  let timer = null;
+  function onScroll(){ if (!timer) timer = setTimeout(() => { timer = null; check(); }, 80); }
+  addEventListener("scroll", onScroll, {passive: true});
+  addEventListener("resize", onScroll);
+  addEventListener("load", check);
+  if (document.fonts) document.fonts.ready.then(check);
+  check();
+  setTimeout(check, 300);
+  // noteの記事など、あとから出てくるカードにも
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => {
+    if (n.nodeType === 1 && n.matches(sel)) { n.classList.add("reveal"); pending.push(n); onScroll(); }
+  }))).observe(document.body, {childList: true, subtree: true});
+
+  function countUp(num){
+    if (!num) return;
+    const t = num.firstChild;
+    if (!t || t.nodeType !== 3) return;
+    const m = t.textContent.match(/^(\D*)([\d.]+)(.*)$/);
+    if (!m) return;
+    const goal = parseFloat(m[2]), dec = (m[2].split(".")[1] || "").length;
+    const start = performance.now(), dur = 1200;
+    (function step(now){
+      const k = Math.max(0, Math.min((now - start) / dur, 1)), v = goal * (1 - Math.pow(1 - k, 3));
+      t.textContent = m[1] + v.toFixed(dec) + m[3];
+      if (k < 1) requestAnimationFrame(step);
+    })(start);
+  }
 })();
 </script>
 </body>
